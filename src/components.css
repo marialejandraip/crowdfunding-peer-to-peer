@@ -3,10 +3,12 @@
     overflow-y:hidden;
 }
 .img-top{
-  position: relative;
+  width: 100%;
 }
 .container h1{
-    color: aqua;
+    color: #00ADF0;
+    width: 30%;
+    margin-left: 30px;
 }
 .form {
     display: flex;
@@ -15,18 +17,34 @@
     justify-content: space-around;
 }
 
-.form label {
-  border-bottom: gainsboro;
-  color: aliceblue;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.form input {
+label {
+  border-bottom: 1px #747474 solid;
+  color: #747474;
+  font-size: 1em;
+  margin: 10px;
+  width: 80%;
+}
+
+label img {
+  margin:0 10px 0 0;
+}
+input {
   border: none;
+  width: 100%;
 }
 
 
 .button{
     background-color: #FC571F;
     border: #FC571F;
-    border-radius: 15px;
+    border-radius: 18px;
+    margin-top: 20px;
+    padding: 10px;
 }

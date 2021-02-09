@@ -2,7 +2,9 @@ import React, { useState} from 'react'
 import {signIn }from '../firebaseFunctions';
 import { Button } from 'react-bootstrap';
 import top from '../assets/images/Group 34.svg';
-import bottom from '../assets/images/XMLID 9.svg'
+import bottom from '../assets/images/XMLID 9.svg';
+import lock from '../assets/images/icons/lock.svg';
+import mail from '../assets/images/icons/mail.svg';
 import '../components.css';
 
 
@@ -30,11 +32,13 @@ export default function Login() {
         className = "form"
         >
           <label>
+            <img src = {mail} alt="" className="mail" />
             Email:
             <input type='text'
             onChange={(e) => setEmail(e.target.value)} /> 
           </label>
           <label>
+          <img src = {lock} alt="" className="mail" />
             Contraseña:
             <input type='password' 
             onChange={(e) => setPassword(e.target.value)}/> 
