@@ -1,19 +1,34 @@
 import React, { useState } from 'react';
 import firebase from 'firebase/app';
-//import { auth } from '../firebaseConfig';
-//import {  sendEmail,createUserEmailAndPassword } from '../firebaseFunctions';
+import {  createUserEmailAndPassword } from '../firebaseFunctions';
 
 export default function Signup() {
   const [em, setEmail] = useState('');
-  //const [password, setPassword] = useState('');
-  //const [disabled, setDisabled] = useState(true);
+  const [password, setPassword] = useState('');
+
+const sendEmail = () => {
+  console.log('entra aqui x2')
+     const user = firebase.auth().currentUser;
+     console.log(user)
+     /* user
+       .sendEmailVerification()
+       .then(() => {
+         console.log('email')
+         //sendEmailMessage();
+         // Email sent.
+       })
+       .catch((error) => {
+         alert(error);// An error happened.
+       }); */
+   };
+   
 
    const handleSubmit = () => {
-/*     createUserEmailAndPassword(email, password)
-    sendEmail() */
-     
     console.log('entra aqui')
-    const config = {
+    createUserEmailAndPassword(em, password)
+    sendEmail()
+    
+    /* const config = {
       url: 'http://localhost:3000/links',
       iOS: {
         bundleId: 'com.example.ios'
@@ -35,7 +50,7 @@ export default function Signup() {
     .catch((error) => {
       console.log(error.message);
       // ...
-    });
+    }); */
 
     //sendEmailSignIn(em);
     //createUserEmailAndPassword(em,password);
@@ -52,9 +67,7 @@ export default function Signup() {
         })
         .catch((error) => {});
     } */
-    
-    
-   }
+  }
   return (
     <div>
       <form>
@@ -68,12 +81,12 @@ export default function Signup() {
           <input type='text'
           onChange={(e) => setEmail(e.target.value)} /> 
         </label>
-      {/*  <label>
+      <label>
           Contraseña:
           <input type='password' 
           onChange={(e) => setPassword(e.target.value)}/> 
-        </label> */}
-        <button onClick={() => handleSubmit()}>Entrar</button>
+        </label>
+        <button onClick={() => handleSubmit()}>Registrar</button>
       </form>
 
     </div>
