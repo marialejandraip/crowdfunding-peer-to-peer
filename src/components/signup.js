@@ -76,10 +76,10 @@ const sendEmail = () => {
     } */
   }
   return (
-    <div className = "login"> 
-    <img src = {top} alt="" />
+    <div className = "signup"> 
+    <img className = "img-top" src = {top} alt="" />
       <div className = "container"> 
-      <h1>Crear Cuenta</h1>
+      <h1 className = "tittle">Crear Cuenta</h1>
       <form >
       <div className="form-group">
       <label>
@@ -106,7 +106,8 @@ const sendEmail = () => {
       </div>
     </form>
       </div>
-      <img src = {bottom} alt="" />
+      <img className = "image-bottom" src = {bottom} alt="" />
+      <Button className = "arrow"></Button>
     </div>
   )
 }
