@@ -3,7 +3,10 @@ import { createUserEmailAndPassword } from '../firebaseFunctions';
 import { Button } from 'react-bootstrap';
 import firebase from 'firebase/app';
 import top from '../assets/images/Group 34.svg'
-import bottom from '../assets/images/XMLID 9.svg'
+import bottom from '../assets/images/XMLID 9.svg';
+import lock from '../assets/images/icons/lock.svg';
+import mail from '../assets/images/icons/mail.svg';
+import user from '../assets/images/icons/user.svg';
 
 
 export default function Signup() {
@@ -80,16 +83,19 @@ const sendEmail = () => {
       <form >
       <div className="form-group">
       <label>
+      <img src = {user} alt="" className="mail" />
           Nombre:
           <input type='text' 
           /> 
         </label>
         <label>
+        <img src = {mail} alt="" className="mail" />
           Email:
           <input type='text'
           onChange={(e) => setEmail(e.target.value)} /> 
         </label>
       <label>
+      <img src = {lock} alt="" className="mail" />
           Contraseña:
           <input type='password' 
           onChange={(e) => setPassword(e.target.value)}/> 
