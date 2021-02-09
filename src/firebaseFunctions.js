@@ -8,7 +8,6 @@ export const signIn = (email, password) => auth.signInWithEmailAndPassword(email
 export async function createUserEmailAndPassword(email, password) {
 	try {
 		const authentication = await firebase.auth().createUserWithEmailAndPassword(email, password);
-    console.log('entro'+ authentication)
 		return authentication; //   objeto que trae mucas cosas
 	} catch (error) {
 		let errorMessage = error.message;
@@ -103,12 +102,6 @@ export const sendEmailSignIn = (email) => {
     // ...
   });
 }
-
-
-
-
-
-
 
 const user = auth.currentUser;
 export const emailVerification = () => user
