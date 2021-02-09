@@ -1,19 +1,38 @@
 import React, { useState } from 'react';
+import { createUserEmailAndPassword } from '../firebaseFunctions';
+import { Button } from 'react-bootstrap';
 import firebase from 'firebase/app';
-//import { auth } from '../firebaseConfig';
-//import {  sendEmail,createUserEmailAndPassword } from '../firebaseFunctions';
+import top from '../assets/images/Group 34.svg'
+import bottom from '../assets/images/XMLID 9.svg'
+
 
 export default function Signup() {
   const [em, setEmail] = useState('');
-  //const [password, setPassword] = useState('');
-  //const [disabled, setDisabled] = useState(true);
+  const [password, setPassword] = useState('');
+
+const sendEmail = () => {
+  console.log('entra aqui x2')
+     const user = firebase.auth().currentUser;
+     console.log(user)
+     /* user
+       .sendEmailVerification()
+       .then(() => {
+         console.log('email')
+         //sendEmailMessage();
+         // Email sent.
+       })
+       .catch((error) => {
+         alert(error);// An error happened.
+       }); */
+   };
+   
 
    const handleSubmit = () => {
-/*     createUserEmailAndPassword(email, password)
-    sendEmail() */
-     
     console.log('entra aqui')
-    const config = {
+    createUserEmailAndPassword(em, password)
+    sendEmail()
+    
+    /* const config = {
       url: 'http://localhost:3000/links',
       iOS: {
         bundleId: 'com.example.ios'
@@ -35,7 +54,7 @@ export default function Signup() {
     .catch((error) => {
       console.log(error.message);
       // ...
-    });
+    }); */
 
     //sendEmailSignIn(em);
     //createUserEmailAndPassword(em,password);
@@ -52,13 +71,15 @@ export default function Signup() {
         })
         .catch((error) => {});
     } */
-    
-    
-   }
+  }
   return (
-    <div>
-      <form>
-        <label>
+    <div className = "login"> 
+    <img src = {top} alt="" />
+      <div className = "container"> 
+      <h1>Crear Cuenta</h1>
+      <form >
+      <div className="form-group">
+      <label>
           Nombre:
           <input type='text' 
           /> 
@@ -68,14 +89,18 @@ export default function Signup() {
           <input type='text'
           onChange={(e) => setEmail(e.target.value)} /> 
         </label>
-      {/*  <label>
+      <label>
           Contraseña:
           <input type='password' 
           onChange={(e) => setPassword(e.target.value)}/> 
-        </label> */}
-        <button onClick={() => handleSubmit()}>Entrar</button>
-      </form>
-
+        </label>
+        <Button className = "col-6 button"
+        onClick={() => handleSubmit()}
+        >Registrar</Button>
+      </div>
+    </form>
+      </div>
+      <img src = {bottom} alt="" />
     </div>
   )
 }

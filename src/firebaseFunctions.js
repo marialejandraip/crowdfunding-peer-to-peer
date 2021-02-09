@@ -42,17 +42,17 @@ export const signOut = () => {
   .catch(console.log(function(error){console.log(error)}))
 } */
 
-const sendEmailMessage = () => {
+/* const sendEmailMessage = () => {
   const errorContainer = document.querySelector('#alerts');
   errorContainer.innerText = 'Verifica tu correo';
   errorContainer.classList.add('email-message-auth');
   setTimeout(() => {
     errorContainer.classList.add('hide');
   }, 5000);
-};
+}; */
 
 export const sendEmail = () => {
-  const config = {
+ /*  const config = {
     url: 'https://crowdfunding-peer-to-peer.firebaseapp.com/links',
     iOS: {
       bundleId: 'com.example.ios'
@@ -63,12 +63,13 @@ export const sendEmail = () => {
       minimumVersion: '12'
     },
   
-  };
+  }; */
   const user = firebase.auth().currentUser;
   user
-    .sendEmailVerification(config)
+    .sendEmailVerification()
     .then(() => {
-      sendEmailMessage();
+      console.log('email')
+      //sendEmailMessage();
       // Email sent.
     })
     .catch((error) => {

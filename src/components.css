@@ -1,18 +1,32 @@
-.login{
+.login .signup{
     height: 100vh;
+    overflow-y:hidden;
 }
-.container{
-    height: 25%;
+.img-top{
+  position: relative;
 }
-.form{
+.container h1{
+    color: aqua;
+}
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
+
+.form label {
+  border-bottom: gainsboro;
+  color: aliceblue;
+}
+
+.form input {
+  border: none;
+}
+
+
 .button{
     background-color: #FC571F;
     border: #FC571F;
     border-radius: 15px;
-    height: 95px;
 }
