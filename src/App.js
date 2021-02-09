@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import Start from './Views/Start';
 import Dashboard from './Views/Dashboard'
+
+import firebase from 'firebase/app';
 import { auth } from './firebaseConfig';
+
 import './App.css';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Landing from './Views/Landing';
 
 
 /* function PrivateRoute({ children, ...rest }) {
@@ -30,7 +34,7 @@ import Login from './components/Login';
 } */
 
 
-function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
+/* function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
   return (
     <Route
       {...rest}
@@ -43,7 +47,7 @@ function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
       }}
     />
   );
-}
+} */
 
 /* function NonLoggedInRoute({ children, isUserLoggedIn, ...rest }) {
   return (
@@ -64,7 +68,10 @@ function App() {
   //const [pending, setPending] = useState(false);
   const [loading, setLoading] = useState(true);
   
+  
   useEffect(() => {
+    const u = firebase.auth().currentUser;
+    console.log(u)
     auth.onAuthStateChanged((user) => {
       console.log(user)
       if (user) {
@@ -72,48 +79,34 @@ function App() {
         console.log('login')
         setIsUserLoggedIn(true)
       } else {
-        if(localStorage.getItem('emailForSignIn')){
-          console.log('waiting link...')
-          //setPending(true);  cambiar a false
-        }
         setIsUserLoggedIn(false); // cambiar a false
         console.log('no está logueado');
       }
       setLoading(false);
-      console.log('esperando por el link')
+      console.log(u)
       return console.log('CLEAN UP Funtion');
     });
   }, []);
 
-  if (loading) return <span>Loading</span>;
+  if (loading) return <span>Loading...</span>;
 
   return (
     <Router>
-    <Switch>
-      <Route exact path='/'>
-        <Start />
-      </Route>
-      <Route path='/signup'>
-        <Signup />
-      </Route>
-      <Route path='/login'>
-        <Login />
-      </Route>
-     {/*  <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} exact path="/">
-        <Start />
-      </NonLoggedInRoute>
-      <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} path="/signup">
-        <Signup />
-      </NonLoggedInRoute>
-      <NonLoggedInRoute isUserLoggedIn={isUserLoggedIn} path="/login">
-        <Login />
-      </NonLoggedInRoute> */}
-      <LoggedInRoute isUserLoggedIn={isUserLoggedIn} path="/dashboard">
-        <Dashboard />
-      </LoggedInRoute>
+      <Switch>
+        <Route exact path='/'>
+          <Start />
+        </Route>
+        <Route path='/signup'>
+          <Signup />
+        </Route>
+        <Route path='/admin'>
+          <Login />
+        </Route>
+        <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
+        <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/:id' /> )}/>
       </Switch>
-      </Router>
-    
+    </Router>
   );
 }
 
