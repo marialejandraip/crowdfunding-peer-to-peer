@@ -76,7 +76,7 @@ const sendEmail = () => {
     } */
   }
   return (
-    <div className = "login"> 
+    <div className = "signup"> 
     <img src = {top} alt="" />
       <div className = "container"> 
       <h1>Crear Cuenta</h1>
