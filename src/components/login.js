@@ -3,6 +3,7 @@ import {signIn }from '../firebaseFunctions';
 import { Button } from 'react-bootstrap';
 import top from '../assets/images/Group 34.svg'
 import bottom from '../assets/images/XMLID 9.svg'
+import arrow from '../assets/images/Arrow.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components.css';
 
@@ -24,9 +25,9 @@ export default function Login() {
 
   return (
     <div className = "login"> 
-      <img src = {top}/>
+      <img className = "image-top" src = {top}/>
       <div className = "container">
-        <h1>Ingresar</h1>
+        <h1 className = "tittle">Ingresar</h1>
         <form onSubmit={(e)=>login(e)} className = "form">
           <label>
             Email:
@@ -41,7 +42,10 @@ export default function Login() {
           <Button className = "col-6 button">Entrar</Button>
         </form>
       </div>
-      <img src = {bottom}/>
+      <img className = "image-bottom" src = {bottom}/>
+      <Button className = "arrow"></Button>
+      
+      
     </div>
   )
 }
