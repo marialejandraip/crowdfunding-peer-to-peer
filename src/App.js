@@ -4,8 +4,8 @@ import Start from './Views/Start';
 import Dashboard from './Views/Dashboard'
 import { auth } from './firebaseConfig';
 import './App.css';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import Signup from './components/signup';
+import Login from './components/login';
 
 
 /* function PrivateRoute({ children, ...rest }) {
