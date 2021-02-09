@@ -77,7 +77,9 @@ const sendEmail = () => {
   }
   return (
     <div className = "signup"> 
+
     <img className = "img-top" src = {top} alt="" />
+
       <div className = "container"> 
       <h1 className = "tittle">Crear Cuenta</h1>
       <form >
