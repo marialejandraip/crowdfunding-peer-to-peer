@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { createUserEmailAndPassword } from '../firebaseFunctions';
+import { Button } from 'react-bootstrap';
 import firebase from 'firebase/app';
-import {  createUserEmailAndPassword } from '../firebaseFunctions';
+import top from '../assets/images/Group 34.svg'
+import bottom from '../assets/images/XMLID 9.svg'
+
 
 export default function Signup() {
   const [em, setEmail] = useState('');
@@ -69,9 +73,13 @@ const sendEmail = () => {
     } */
   }
   return (
-    <div>
-      <form>
-        <label>
+    <div className = "login"> 
+    <img src = {top} alt="" />
+      <div className = "container"> 
+      <h1>Crear Cuenta</h1>
+      <form >
+      <div className="form-group">
+      <label>
           Nombre:
           <input type='text' 
           /> 
@@ -86,9 +94,13 @@ const sendEmail = () => {
           <input type='password' 
           onChange={(e) => setPassword(e.target.value)}/> 
         </label>
-        <button onClick={() => handleSubmit()}>Registrar</button>
-      </form>
-
+        <Button className = "col-6 button"
+        onClick={() => handleSubmit()}
+        >Registrar</Button>
+      </div>
+    </form>
+      </div>
+      <img src = {bottom} alt="" />
     </div>
   )
 }
