@@ -7,8 +7,8 @@ import firebase from 'firebase/app';
 import { auth } from './firebaseConfig';
 
 import './App.css';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import Signup from './components/signup';
+import Login from './components/login';
 import Landing from './Views/Landing';
 
 
@@ -70,8 +70,6 @@ function App() {
   
   
   useEffect(() => {
-    const u = firebase.auth().currentUser;
-    console.log(u)
     auth.onAuthStateChanged((user) => {
       console.log(user)
       if (user) {
@@ -83,7 +81,7 @@ function App() {
         console.log('no está logueado');
       }
       setLoading(false);
-      console.log(u)
+
       return console.log('CLEAN UP Funtion');
     });
   }, []);
@@ -104,7 +102,7 @@ function App() {
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
         <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
-        <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/:id' /> )}/>
+       {/*  <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/:id' /> )}/> */}
       </Switch>
     </Router>
   );

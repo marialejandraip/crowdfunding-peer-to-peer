@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { createUserEmailAndPassword } from '../firebaseFunctions';
+import { Button } from 'react-bootstrap';
 import firebase from 'firebase/app';
-import {  createUserEmailAndPassword } from '../firebaseFunctions';
+import top from '../assets/images/Group 34.svg'
+import bottom from '../assets/images/XMLID 9.svg';
+import lock from '../assets/images/icons/lock.svg';
+import mail from '../assets/images/icons/mail.svg';
+import user from '../assets/images/icons/user.svg';
+
 
 export default function Signup() {
   const [em, setEmail] = useState('');
@@ -69,26 +76,40 @@ const sendEmail = () => {
     } */
   }
   return (
-    <div>
-      <form>
-        <label>
+    <div className = "signup"> 
+
+    <img className = "img-top" src = {top} alt="" />
+
+      <div className = "container"> 
+      <h1 className = "tittle">Crear Cuenta</h1>
+      <form >
+      <div className="form-group">
+      <label>
+      <img src = {user} alt="" className="mail" />
           Nombre:
           <input type='text' 
           /> 
         </label>
         <label>
+        <img src = {mail} alt="" className="mail" />
           Email:
           <input type='text'
           onChange={(e) => setEmail(e.target.value)} /> 
         </label>
       <label>
+      <img src = {lock} alt="" className="mail" />
           Contraseña:
           <input type='password' 
           onChange={(e) => setPassword(e.target.value)}/> 
         </label>
-        <button onClick={() => handleSubmit()}>Registrar</button>
-      </form>
-
+        <Button className = "col-6 button"
+        onClick={() => handleSubmit()}
+        >Registrar</Button>
+      </div>
+    </form>
+      </div>
+      <img className = "image-bottom" src = {bottom} alt="" />
+      <Button className = "arrow"></Button>
     </div>
   )
 }
