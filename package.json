@@ -6,11 +6,8 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
-<<<<<<< HEAD
     "bootstrap": "^4.6.0",
-=======
     "firebase": "^8.2.6",
->>>>>>> 41f2f4e53a305380e246863e3e25252ddddb1e1f
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
