@@ -96,5 +96,69 @@ input {
     z-index: 2;
 }
 label{
-    top: 10px
+  top: 10px
+}
+
+.child, .top-desktop, .top-desktopL, .bottom-desktop, .bottom-desktopL, .grandma{
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .img-top, .image-bottom, .arrow{
+    display: none;
+  }
+
+  .tittle-signup, .tittle{
+    position: static;
+  }
+
+  .top-desktop{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+  }
+
+  .top-desktopL{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+  }
+  
+  .child, .grandma{
+    display: block;
+    width: 40%;
+    height: 65%;
+  }
+
+  
+  .signup, .login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+  }
+
+  .login {
+    flex-direction: row-reverse;
+  }
+
+  .bottom-desktop{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+  }
+
+  .bottom-desktopL{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+  }
 }
