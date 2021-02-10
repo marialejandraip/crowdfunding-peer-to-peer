@@ -25,7 +25,7 @@ const sendEmail = () => {
   console.log('entra aqui x2')
      const user = firebase.auth().currentUser;
      console.log(user)
-     /* user
+     user
        .sendEmailVerification()
        .then(() => {
          console.log('email')
@@ -34,14 +34,14 @@ const sendEmail = () => {
        })
        .catch((error) => {
          alert(error);// An error happened.
-       }); */
+       });
    };
    
 
-   const handleSubmit = () => {
+   const handleSubmit = async () => {
     console.log('entra aqui')
-    createUserEmailAndPassword(em, password)
-    sendEmail()
+    await createUserEmailAndPassword(em, password);
+    sendEmail();
     
     /* const config = {
       url: 'http://localhost:3000/links',

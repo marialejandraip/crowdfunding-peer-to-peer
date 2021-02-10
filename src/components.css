@@ -9,9 +9,11 @@
     width: 100vw;
     overflow-y: hidden;
 }
+
 .sigup{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
+    overflow-y: hidden;
 }
 
 .img-top{
@@ -122,6 +124,7 @@ label{
     top: 0;
     left: 0;
     width: 70%;
+    z-index: -1;
   }
 
   .top-desktopL{
@@ -130,6 +133,7 @@ label{
     top: 0;
     right: 0;
     width: 50%;
+    z-index: -1;
   }
   
   .child, .grandma{
@@ -155,6 +159,7 @@ label{
     bottom: 0;
     right: 0;
     width: 40%;
+    z-index: -1;
   }
 
   .bottom-desktopL{
@@ -163,5 +168,6 @@ label{
     bottom: 0;
     left: 0;
     width: 40%;
+    z-index: -1;
   }
 }

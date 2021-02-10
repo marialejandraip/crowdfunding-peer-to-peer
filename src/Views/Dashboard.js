@@ -20,8 +20,12 @@ export default function Dashboard() {
 
   const isDesktop = window.matchMedia("(max-width: 720px)");
 
+  // AQUI condicional para mobile y para desktop ¿? en router o hay manera más facil
+  // Si media max de 720 entonces renderizar todo 
+  // si no hacer el switch de cada caso dashbord/2 dashboard/3
   // switch(id){
-  //   case 0:
+  //   case 0: path sea dashboard/
+  //    return <foundation />
   //   case 1:
   //     return:  
      // case 2:
