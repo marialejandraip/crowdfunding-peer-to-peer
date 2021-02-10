@@ -20,17 +20,20 @@ function App() {
   
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log(user)
-      if (user) {
+      //console.log(user)
+      if (user && user.emailVerified) {
         localStorage.setItem('newUser', JSON.stringify(user));
         console.log('login')
         setIsUserLoggedIn(true)
-      } else {
+      } else if(user && !user.emailVerified ){
+        console.log('verifica email')
+      }
+      else {
         setIsUserLoggedIn(false); // cambiar a false
         console.log('no está logueado');
+        //setPending(true)
       }
       setLoading(false);
-
       return console.log('CLEAN UP Funtion');
     });
   }, []);
