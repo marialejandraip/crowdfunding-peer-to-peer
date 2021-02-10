@@ -47,8 +47,9 @@ export default function Login() {
       <div>
         <h1 className = "tittle">Ingresar</h1>
         <div className = "container">
-          <form className = "form">
-            <label>
+          <form >
+          <div className="form-group">
+          <label>
               <img src = {mail} alt=""/>
               Email:
               <input className = "input" type='text'
@@ -61,8 +62,10 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}/> 
             </label>
             <Button 
-            className = "col-7 button" 
-            onClick={(e)=>login(e)}>Entrar</Button>
+            className = "col-7 button"
+            onClick={(e)=>login(e)} 
+            >Entrar</Button>
+          </div>
           </form>
         </div>
       </div>
