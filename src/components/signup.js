@@ -93,7 +93,7 @@ const sendEmail = () => {
 
       <div>
         <h1 className = "tittle-signup">Crear Cuenta</h1>
-        <div className = "container"> 
+        <div className = "container-signup"> 
           <form >
             <div className="form-group">
             <label>

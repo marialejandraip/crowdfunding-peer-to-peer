@@ -37,7 +37,7 @@ export default function Login() {
       <img className = "grandma" src = {Grandma} alt=""/>
       {/*<container>
         <Row className = "rows">
-          <col className = "columns">
+          <col-sm className = "columns">
           </col>
         </Row>
         <Row className = "rows">
