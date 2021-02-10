@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+//import Footer from '../components/Footer';
 import Foundation from '../components/Foundation';
 import Forms from '../components/Forms'
 import styles from './Dashboard.module.css';
@@ -43,7 +43,7 @@ export default function Dashboard() {
       <Forms />
       {/* <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div> */}
       
-      <Footer />
+      {/*<Footer />*/}
     </div>
   )
 }
