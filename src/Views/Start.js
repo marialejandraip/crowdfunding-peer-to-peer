@@ -6,8 +6,8 @@ export default function Start() {
 
   return (
     <div>
-      <button className='Home-btn' onClick= {() => { history.push('/signup') }}>signup</button>
-      <button className='Home-btn' onClick= {() => { history.push('/login') }}>login</button>
+      <button className='Home-btn' onClick= {() => { history.push('/login') }}>Ingreso</button>
+      <button className='Home-btn' onClick= {() => { history.push('/signup') }}>Registro</button>
     </div>
   )
 }
