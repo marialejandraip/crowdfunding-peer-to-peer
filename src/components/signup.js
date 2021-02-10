@@ -14,7 +14,7 @@ import Child from '../assets/images/Chil.png';
 import lock from '../assets/images/icons/lock.svg';
 import mail from '../assets/images/icons/mail.svg';
 import user from '../assets/images/icons/user.svg';
-
+import '../components.css';
 
 export default function Signup() {
   const [em, setEmail] = useState('');

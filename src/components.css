@@ -41,8 +41,8 @@
     position: absolute;
     color: #00ADF0;
     margin-left: 9%;
-    width: 75%;
-    top: 150px;
+    width: 40%;
+    top: 70px;
     z-index: 2;
 }
 .container{
@@ -130,8 +130,7 @@ label{
   
   .child, .grandma{
     display: block;
-    width: 40%;
-    height: 65%;
+    width: 32%;
   }
 
   
