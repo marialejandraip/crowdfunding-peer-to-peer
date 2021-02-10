@@ -4,6 +4,7 @@
 .login{
     height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 }
 .sigup{
     height: 100vh;
@@ -17,16 +18,16 @@
     z-index: 1;
 }
 .image-bottom{
-    position: relative;
+    position: absolute;
     height:33%;
     width:55%;
     bottom:0;
-    z-index: 1;
+    z-index: -1;
 }
 .tittle{
     position: absolute;
     color: #00ADF0;
-    margin-left: 9%;
+    margin-left: -7%;
     width: 75%;
     top: 196px;
     z-index: 2;
@@ -36,12 +37,17 @@
     color: #00ADF0;
     margin-left: 9%;
     width: 40%;
-    top: 70px;
+    top: 90px;
     z-index: 2;
 }
 .container{
     height: 31%;
     padding-top: 18px ;
+}
+.container-signup{
+    height: 31%;
+    padding-top: 18px ;
+    margin-top: 30px;
 }
 .form {
     display: flex;
@@ -54,6 +60,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 0;
 }
 
 label {
@@ -80,13 +87,13 @@ input {
 }
 .arrow{
     position: absolute;
-    background-color: #ffffff00;
+    background-color: #00000000;
     background-image: url(./assets/images/Arrow.svg);
     border: 0;
     width: 39px;
     height: 34px;
-    margin-left: -45%;
-    margin-top: 42%;
+    margin-left: 16%;
+    margin-top: 37%;
     z-index: 2;
 }
 label{
