@@ -80,8 +80,9 @@ const sendEmail = () => {
 
     <img className = "img-top" src = {top} alt="" />
 
+    <h1 className = "tittle-signup">Crear Cuenta</h1>
+
       <div className = "container"> 
-      <h1 className = "tittle">Crear Cuenta</h1>
       <form >
       <div className="form-group">
       <label>
