@@ -15,8 +15,8 @@ export default function Start() {
           <p>Ayudemos a miles de familias damnificadas, ofreciendo tu <strong>razón</strong> como un momento para apoyar a quien más lo necesita.</p>
         </div>
         <div className={styles['home__button-container']}>
-          <button className={styles.home__button} onClick= {() => { history.push('/signup') }}>Ingreso</button>
-          <button className={styles.home__button} onClick= {() => { history.push('/login') }}>Registro</button>
+          <button className={styles.home__button} onClick= {() => { history.push('/login') }}>Ingreso</button>
+          <button className={styles.home__button} onClick= {() => { history.push('/signup') }}>Registro</button>
         </div>
       </div>
       <img src={Collage} className={styles.home__collage} alt="Personas felices" />

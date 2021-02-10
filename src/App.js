@@ -12,57 +12,6 @@ import Login from './components/login';
 import Landing from './Views/Landing';
 
 
-/* function PrivateRoute({ children, ...rest }) {
-  let auth = useAuth();
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        auth.user ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  );
-} */
-
-
-/* function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        if (isUserLoggedIn) {
-          console.log('si aparece aqio')
-          return <Dashboard>{children}</Dashboard>;
-        }
-        return <Redirect to="/" />;
-      }}
-    />
-  );
-} */
-
-/* function NonLoggedInRoute({ children, isUserLoggedIn, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        if (!isUserLoggedIn) {
-          return <>{children}</>;
-        }
-        return <Redirect to="/dashboard" />;
-      }}
-    />
-  );
-} */
-
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   //const [pending, setPending] = useState(false);
@@ -101,8 +50,10 @@ function App() {
           <Login />
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
-        <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
-       {/*  <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/:id' /> )}/> */}
+        <Route exact path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route path="/dashboard/:id" children={() => ( isUserLoggedIn ? <Dashboard /> : null )} />
+        {/* <Route path="/dashboard/2" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/dashboard/2' /> )}/>
+        <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/landing' /> )}/> */}
       </Switch>
     </Router>
   );

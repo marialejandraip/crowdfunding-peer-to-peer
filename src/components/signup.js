@@ -19,6 +19,7 @@ import '../components.css';
 export default function Signup() {
   const [em, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
 
 const sendEmail = () => {
   console.log('entra aqui x2')
@@ -98,7 +99,8 @@ const sendEmail = () => {
             <label>
               <img src = {user} alt="" className="mail" />
               Nombre:
-              <input type='text' /> 
+              <input type='text' 
+              onChange={(e) => setName(e.target.value)}/> 
             </label>
             <label>
               <img src = {mail} alt="" className="mail" />

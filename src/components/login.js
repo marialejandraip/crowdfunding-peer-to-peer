@@ -65,6 +65,7 @@ export default function Login() {
             className = "col-7 button"
             onClick={(e)=>login(e)} 
             >Entrar</Button>
+            <span>¿Olvidaste tu contraseña?</span>
           </div>
           </form>
         </div>
