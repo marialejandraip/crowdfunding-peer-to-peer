@@ -8,7 +8,19 @@ export const signIn = (email, password) => auth.signInWithEmailAndPassword(email
 export async function createUserEmailAndPassword(email, password) {
 	try {
 		const authentication = await firebase.auth().createUserWithEmailAndPassword(email, password);
-		return authentication; //   objeto que trae mucas cosas
+      console.log(authentication)
+      authentication.user
+       .sendEmailVerification()
+       .then(() => {
+         console.log('email')
+         //sendEmailMessage();
+         // Email sent.
+       })
+       .catch((error) => {
+         alert(error);// An error happened.
+       });
+    
+    return authentication; //   objeto que trae mucas cosas
 	} catch (error) {
 		let errorMessage = error.message;
 		return errorMessage;
