@@ -25,7 +25,7 @@
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  padding: 12%;
+  padding: 8%;
 }
 
 .home__welcome > .home__welcome {
@@ -38,8 +38,8 @@
   height: 50px;
   width: 200px;
   border-style: none;
-  margin: -4%;
   color: white;
+  margin: 2%;
   
 }
 
@@ -47,6 +47,11 @@
   background-color: white;
   color: gray;
   border: 2px solid #0ABFE5;
+}
+
+.home__button-container{
+  display: flex;
+  flex-direction: column;
 }
 
 h1{
