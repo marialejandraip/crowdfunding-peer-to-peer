@@ -1,0 +1,31 @@
+.item{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.nav{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  bottom: 30px;
+  width: 100%;
+}
+
+.arrow{
+  background-color: #ffffff00;
+  background-image: url(../assets/images/Arrow.svg);
+  border: 0;
+  width: 39px;
+  height: 34px;
+  z-index: 2;
+}
+
+.arrowR{
+  background-color: #ffffff00;
+  background-image: url(../assets/images/ArrowRt.svg);
+  border: 0;
+  width: 39px;
+  height: 34px;
+  z-index: 1;
+}

@@ -1,0 +1,38 @@
+.item{
+  width: 24vw;
+  height: 24vw;
+  border-radius: 24vw;
+  background-color: rgb(175, 175, 175);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 4%;
+}
+
+.item p{
+  font-size: 12px;
+  padding: 0;
+  color: white;
+  margin-top: 12px;
+}
+
+.item:hover{
+  background-color: #003045;
+}
+
+h3{
+  margin: 40px 12%;
+  color:#00ADF0;
+}
+
+.foundation__grid{
+  display: grid;
+  width: 100%;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px 12px;
+  padding: 8%;
+  justify-items: center;
+  align-items: center;
+}
