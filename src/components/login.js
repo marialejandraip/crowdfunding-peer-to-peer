@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import {signIn }from '../firebaseFunctions';
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col, Container } from 'react-bootstrap';
 import top from '../assets/images/Group 34.svg'
 import bottom from '../assets/images/XMLID 9.svg'
 import lock from '../assets/images/icons/lock.svg';
@@ -28,8 +28,17 @@ export default function Login() {
   return (
     <div className = "login"> 
       <img className = "img-top" src = {top}/>
+      {/*<container>
+        <Row className = "rows">
+          <col className = "columns">
+          </col>
+        </Row>
+        <Row className = "rows">
+          <col className = "columns"></col>
+        </Row>
+      </container>*/}
+      <h1 className = "tittle">Ingresar</h1>
       <div className = "container">
-        <h1 className = "tittle">Ingresar</h1>
         <form className = "form">
           <label>
           <img src = {mail} alt=""/>
@@ -44,7 +53,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}/> 
           </label>
           <Button 
-          className = "col-6 button" 
+          className = "button col-7" 
           onClick={(e)=>login(e)}>Entrar</Button>
         </form>
       </div>
