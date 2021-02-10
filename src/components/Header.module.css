@@ -1,0 +1,19 @@
+.mask{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header{
+  display: flex;
+  color:#00ADF0;
+  align-items: center;
+  width: 80%;
+  padding: 20px 15px;
+  margin-left: 4%;
+}
+
+.header h4{
+  width: 20%;
+  padding: 0 15px;
+}

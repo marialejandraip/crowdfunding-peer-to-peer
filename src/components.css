@@ -1,0 +1,164 @@
+.rows{
+    border: 2px solid #FC571F;
+}
+.login{
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+}
+.sigup{
+    height: 100vh;
+    width: 100vw;
+}
+
+.img-top{
+    position: relative;
+    height:36%;
+    width:100%;
+    z-index: 1;
+}
+.image-bottom{
+    position: absolute;
+    height:33%;
+    width:55%;
+    bottom:0;
+    z-index: -1;
+}
+.tittle{
+    position: absolute;
+    color: #00ADF0;
+    margin-left: -7%;
+    width: 75%;
+    top: 196px;
+    z-index: 2;
+}
+.tittle-signup{
+    position: absolute;
+    color: #00ADF0;
+    margin-left: 9%;
+    width: 40%;
+    top: 90px;
+    z-index: 2;
+}
+.container{
+    height: 31%;
+    padding-top: 18px ;
+}
+.container-signup{
+    height: 31%;
+    padding-top: 18px ;
+    margin-top: 30px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0;
+}
+
+label {
+  border-bottom: 1px #747474 solid;
+  color: #747474;
+  font-size: 1em;
+  margin: 10px;
+  width: 80%;
+}
+
+label img {
+  margin:0 10px 0 0;
+}
+input {
+  border: none;
+  width: 100%;
+}
+.button{
+    background-color: #FC571F;
+    border: #FC571F;
+    border-radius: 18px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.arrow{
+    position: absolute;
+    background-color: #00000000;
+    background-image: url(./assets/images/Arrow.svg);
+    border: 0;
+    width: 39px;
+    height: 34px;
+    margin-left: 16%;
+    margin-top: 37%;
+    z-index: 2;
+}
+label{
+  top: 10px
+}
+
+.child, .top-desktop, .top-desktopL, .bottom-desktop, .bottom-desktopL, .grandma{
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .img-top, .image-bottom, .arrow{
+    display: none;
+  }
+
+  .tittle-signup, .tittle{
+    position: static;
+  }
+
+  .top-desktop{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+  }
+
+  .top-desktopL{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+  }
+  
+  .child, .grandma{
+    display: block;
+    width: 32%;
+  }
+
+  
+  .signup, .login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+  }
+
+  .login {
+    flex-direction: row-reverse;
+  }
+
+  .bottom-desktop{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+  }
+
+  .bottom-desktopL{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+  }
+}
