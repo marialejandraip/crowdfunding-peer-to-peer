@@ -9,6 +9,10 @@ export default function Dashboard() {
     <div>
       <Header />
       Aqui
+
+      <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div>
+      <script src="https://my.afrus.app/template/index.js"></script>
+      
       <button onClick={()=>signOut()}>Logout</button>
     </div>
   )
