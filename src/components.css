@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .rows{
     border: 2px solid #FC571F;
 }
@@ -14,6 +15,7 @@
     height: 100vh;
     width: 100vw;
 }
+
 .img-top{
     position: relative;
     height:36%;

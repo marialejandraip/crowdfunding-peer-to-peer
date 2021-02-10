@@ -77,8 +77,11 @@ const sendEmail = () => {
   }
   return (
     <div className = "signup"> 
+
     <img className = "img-top" src = {top} alt="" />
+
     <h1 className = "tittle-signup">Crear Cuenta</h1>
+
       <div className = "container"> 
       <form >
       <div className="form-group">
