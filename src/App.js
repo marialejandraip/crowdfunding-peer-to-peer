@@ -51,8 +51,8 @@ function App() {
         <Route path='/admin'>
           <Login />
         </Route>
-        <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
-        <Route exact path="/dashboard" render={() => ( isUserLoggedIn  ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route exact path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
+        <Route path="/dashboard" render={() => ( isUserLoggedIn  ? <Dashboard /> : <Redirect to='/login' /> )}/>
         <Route path="/dashboard/:id" children={() => ( isUserLoggedIn ? <Dashboard /> : null )} />
         {/* <Route path="/dashboard/2" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/dashboard/2' /> )}/>
         <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/id' /> )}/> */}
