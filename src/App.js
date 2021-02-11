@@ -3,18 +3,17 @@ import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-do
 import Start from './Views/Start';
 import Dashboard from './Views/Dashboard'
 
-import firebase from 'firebase/app';
 import { auth } from './firebaseConfig';
 
 import './App.css';
 import Signup from './components/signup';
 import Login from './components/login';
-import Landing from './Views/Landing';
+//import Landing from './Views/Landing';
 
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  //const [pending, setPending] = useState(false);
+  const [pending, setPending] = useState(false);
   const [loading, setLoading] = useState(true);
   
   
@@ -27,8 +26,10 @@ function App() {
         setIsUserLoggedIn(true)
       } else if(user && !user.emailVerified ){
         console.log('verifica email')
+        setPending(true)
       }
       else {
+        setPending(false)
         setIsUserLoggedIn(false); // cambiar a false
         console.log('no está logueado');
         //setPending(true)
@@ -46,14 +47,12 @@ function App() {
         <Route exact path='/'>
           <Start />
         </Route>
-        <Route path='/signup'>
-          <Signup />
-        </Route>
+        <Route path='/signup' render={() => ( !pending ? <Signup /> : <Redirect to='/login' /> )}/>
         <Route path='/admin'>
           <Login />
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
-        <Route exact path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route exact path="/dashboard" render={() => ( isUserLoggedIn  ? <Dashboard /> : <Redirect to='/login' /> )}/>
         <Route path="/dashboard/:id" children={() => ( isUserLoggedIn ? <Dashboard /> : null )} />
         {/* <Route path="/dashboard/2" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/dashboard/2' /> )}/>
         <Route path="/dashboard" render={() => ( !isUserLoggedIn ? <Landing /> : <Redirect to='/id' /> )}/> */}

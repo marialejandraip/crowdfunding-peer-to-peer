@@ -1,7 +1,7 @@
 import React,{ useState } from 'react';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+//import Footer from '../components/Footer';
 import Foundation from '../components/Foundation';
 import Forms from '../components/Forms'
 import styles from './Dashboard.module.css';
@@ -14,6 +14,7 @@ import '../components.css';
 
 export default function Dashboard() {
   const [found, setFound] = useState('');
+
   console.log(found)
   let { id } = useParams();
   console.log(id);
@@ -36,18 +37,22 @@ export default function Dashboard() {
   // en la parte de escritorio
   
   const foundation = Object.values(foundations);
-  console.log(foundation[0])
+  console.log(foundation)
   return (
     <div className={styles.container}>
       <button onClick={()=>signOut()}>Logout</button>
       <Header />
+      <div >
       <Foundation 
         setFound={setFound}
         data={foundations}/>
+      </div>
+     
       <Forms />
+
       {/* <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div> */}
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

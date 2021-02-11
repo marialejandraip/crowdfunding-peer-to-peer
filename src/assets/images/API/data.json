@@ -1,12 +1,41 @@
-{ "foundations":[
-  "Asociación bancos de alimentos", 
-  "Banco de alimentos de Neiva ",
-  "Banco de alimentos de Zipaquirá",
-  "Banco de alimentos de San Andrés",
-  "Banco de alimentos de Cartagena",
-  "Banco de alimentos de Medellín",
-  "Banco de alimentos de Santa Marta ",
-  "Banco de alimentos de Pasto",
-  "Banco de alimentos de Guajira"
-  ]
+{
+  "foundations":{
+    "Asociación bancos de alimentos":{
+      "image": "assets/fundaciones/Collage.png",
+      "misions":["ALIMENTACIÓN PARA UN NIÑO","ALIMENTACIÓN PARA UN ADULTO MAYOR", "ALIMENTACIÓN PARA UNA FAMILIA EN CONDICIÓN DE VULNERABILIDAD", "CONSTRUCCIÓN BANCO DE ALIMENTOS"],
+      "description":"400 millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad."
+    },
+    "Banco de alimentos de Neiva ":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Zipaquirá":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de San Andrés":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Cartagena":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Medellín":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Santa Marta ":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Pasto":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    },
+    "Banco de alimentos de Guajira":{
+      "image": "assets/Abaco 1.svg",
+      "description":""
+    }
+  }
 }

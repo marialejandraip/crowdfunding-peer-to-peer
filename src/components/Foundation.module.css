@@ -1,4 +1,4 @@
-.item{
+/* .item{
   width: 24vw;
   height: 24vw;
   border-radius: 24vw;
@@ -15,11 +15,8 @@
   padding: 0;
   color: white;
   margin-top: 12px;
-}
+} */
 
-.item:hover{
-  background-color: #003045;
-}
 
 .foundation__title{
   color:#00ADF0;

@@ -18,3 +18,12 @@ export default function Footer() {
     </>
   )
 }
+
+
+ /* "Asociación bancos de alimentos":{
+  "misiones":[ALIMENTACIÓN PARA UN NIÑO 
+ALIMENTACIÓN PARA UN ADULTO MAYOR 
+ALIMENTACIÓN PARA UNA FAMILIA EN CONDICIÓN DE VULNERABILIDAD 
+CONSTRUCCIÓN BANCO DE ALIMENTOS ],
+  "Descripion": "400 millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad."
+},  */ 
