@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup'
 
-export default function Forms_2() {
+export default function Forms_2({data, setData}) {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
         campaignImage: '',
         visibleDonors:'', 
       }
-    const [data, setData] = useState (initialStateData)
+    //const [data, setData] = useState (initialStateData)
     
     const handleInputchange = event => {
       //console.log(event.target.value)
