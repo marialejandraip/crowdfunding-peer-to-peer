@@ -40,7 +40,7 @@ const handleSubmit = event => {
                   type="text" 
                   name= "type"
                   defaultValue={'DEFAULT'} 
-                  onChange = {(e) => {initialStateValues.type = e.target.value}}>
+                  onChange = {handleInputchange}>
                   <option value="DEFAULT" disabled>Tipo de campaña</option>
                   <option>1</option>
                   <option>2</option>
