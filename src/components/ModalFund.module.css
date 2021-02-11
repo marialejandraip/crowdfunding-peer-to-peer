@@ -1,0 +1,30 @@
+.item{
+  width: 24vw;
+  height: 24vw;
+  border-radius: 24vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 4%;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.item img{
+  width: 22vw;
+  object-fit: cover;
+}
+
+.item p{
+  position: absolute;
+  font-size: 12px;
+  padding: 0;
+  color: black;
+  margin-top: 12px;
+  max-width: 24vw;
+}
+
+.item:hover{
+  background-color: #003045;
+}

@@ -36,52 +36,10 @@ const sendEmail = () => {
          alert(error);// An error happened.
        });
    };
-   
 
-   const handleSubmit = async () => {
+  const handleSubmit = async () => {
     console.log('entra aqui')
     await createUserEmailAndPassword(em, password);
-    sendEmail();
-    
-    /* const config = {
-      url: 'http://localhost:3000/links',
-      iOS: {
-        bundleId: 'com.example.ios'
-      },
-      handleCodeInApp: false,
-      android: {
-        packageName: 'com.example.android',
-        installApp: true,
-        minimumVersion: '12'
-      },
-    
-    };
-    firebase.auth().sendSignInLinkToEmail(em, config)
-    .then(() => {
-      console.log('se supone que link ajá'+ em, config);
-      window.localStorage.setItem('emailForSignIn', em);
-      // ...
-    })
-    .catch((error) => {
-      console.log(error.message);
-      // ...
-    }); */
-
-    //sendEmailSignIn(em);
-    //createUserEmailAndPassword(em,password);
-
- /*    if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
-      var email = window.localStorage.getItem('emailForSignIn');
-      if (!email) {
-        email = window.prompt('Please provide your email for confirmation');
-      }
-      // The client SDK will parse the code from the link for you.
-      firebase.auth().signInWithEmailLink(email, window.location.href)
-        .then((result) => {
-          window.localStorage.removeItem('emailForSignIn');
-        })
-        .catch((error) => {});
-    } */
   }
   return (
     <div className = "signup"> 
