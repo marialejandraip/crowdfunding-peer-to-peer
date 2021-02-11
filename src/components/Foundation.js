@@ -3,12 +3,10 @@ import styles from './Foundation.module.css';
 import foundations from '../assets/images/API/data';
 
 import ModalFund from '../components/ModalFund';
-import { NavItem } from 'react-bootstrap';
 
-export default function Foundation( { name }) {
+export default function Foundation() {
 
 const foundation = Object.keys(foundations.foundations)
-//console.log(foundations.foundations[found].image)
 
   return (
     <>
@@ -18,7 +16,8 @@ const foundation = Object.keys(foundations.foundations)
           <ModalFund 
           key={`${idx}found`}
           name={name}
-          image={foundations.foundations[name].image} 
+          image={foundations.foundations[name].image}
+          data={foundations.foundations[name]}
           idx={idx}/>
         ))}
       </div>
