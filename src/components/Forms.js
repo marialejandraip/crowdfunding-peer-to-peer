@@ -33,9 +33,10 @@ const handleSubmit = event => {
         <Row className = "rows">
           <Col className = "columns">
             <form className="card card-body input-group" onSubmit = {handleSubmit} > 
-              <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Group>
                 <Form.Control 
-                  as="select" 
+                  as="select"
+                  custom 
                   type="text" 
                   name= "type"
                   defaultValue={'DEFAULT'} 
