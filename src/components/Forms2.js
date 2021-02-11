@@ -1,18 +1,27 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
-import InputGroup from 'react-bootstrap/InputGroup'
+import InputGroup from 'react-bootstrap/InputGroup';
+import storage from '../firebaseConfig.js';
 
-export default function Forms_2() {
+export default function Forms2() {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
-        campaignImage: '',
         visibleDonors:'', 
       }
     const [data, setData] = useState (initialStateData)
+    const [image, setImage] = useState (null)
+    console.log('image=>',image)
+
+    const handleImageChange = event => {
+      if (event.target.file[0]){
+        setImage(event.target.file[0])
+        console.log('image =>',image)
+      }
+    }
+    
     
     const handleInputchange = event => {
-      //console.log(event.target.value)
       setData({
         ...data,
         [event.target.name] : event.target.value})
@@ -21,7 +30,8 @@ export default function Forms_2() {
     
     const handleSubmit = event => {
       event.preventDefault()
-      console.log(data)
+      console.log('Hola soy data =>',data)
+      console.log('image =>',image)
       
        //recibe informacion de evento, cada que se hace click para enviar info del form    
     }
@@ -44,15 +54,7 @@ export default function Forms_2() {
                       name= "campaignPodcast" 
                       onChange = {handleInputchange}>
                     </Form.Control>
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.File 
-                    
-                    name="campaignImage"
-                    label="Impulsa con una foto de campaña"
-                    onChange={handleInputchange}/>
-                  </Form.Group>
-                  
+                  </Form.Group>                  
                   <Form.Check 
                     type="switch"
                     id="custom-switch"
@@ -64,7 +66,19 @@ export default function Forms_2() {
                   </Button>
                 </form>
               </Col>
-            </Row>      
+            </Row>
+            <Row>
+              <Col>
+              <Form.Group>
+                    <Form.Control 
+                    type="file"
+                    name="image"
+                    label="Impulsa con una foto de campaña"
+                    onChange={handleImageChange}>
+                    </Form.Control>
+                  </Form.Group>
+              </Col>
+            </Row>  
         </Container>
       )
     
