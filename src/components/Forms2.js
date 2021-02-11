@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Footer from '../components/Footer';
 import storage from '../firebaseConfig.js';
 
-export default function Forms_2({data, setData}) {
+export default function Forms_2({data, setData, setRuta, ruta}) {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
@@ -78,7 +79,7 @@ export default function Forms_2({data, setData}) {
                     </Form.Control>
                   </Form.Group>
               </Col>
-            </Row>  
+            </Row> 
         </Container>
       )
     

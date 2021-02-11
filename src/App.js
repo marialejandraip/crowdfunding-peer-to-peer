@@ -58,9 +58,15 @@ function App() {
         <Route path='/login'>
           <Login />
         </Route>
-        <Route path='/dashboard'>
+        <Route path='/dashboard/'>
           <Dashboard isUserLoggedIn={isUserLoggedIn} />
         </Route>
+{/*         <Route path='/dashboard/1'>
+          <Dashboard isUserLoggedIn={isUserLoggedIn} />
+        </Route>
+        <Route path='/dashboard/2'>
+          <Dashboard isUserLoggedIn={isUserLoggedIn} />
+        </Route> */}
       </Switch>
     </Router>
   );
