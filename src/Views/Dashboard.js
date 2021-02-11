@@ -12,10 +12,13 @@ import { useParams } from "react-router-dom";
 import { signOut } from '../firebaseFunctions';
 
 import foundations from '../assets/images/API/data';
+import Waiting from '../Views/Waiting';
 
 import '../components.css';
 
-export default function Dashboard() {
+export default function Dashboard({ isUserLoggedIn }) {
+
+  
   const [found, setFound] = useState('');
 
   console.log(found)
@@ -25,7 +28,10 @@ export default function Dashboard() {
   const foundation = Object.values(foundations);
   console.log(foundation)
   return (
-    <div className={styles.container}>
+    <>
+    {isUserLoggedIn ? 
+     
+      <div className={styles.container}>
       <button onClick={()=>signOut()}>Logout</button>
       <Header />
 
@@ -39,6 +45,10 @@ export default function Dashboard() {
       
       {/*<Footer />*/}
     </div>
+     : <Waiting />
+    }
+    </>
+    
   )
 }
 
