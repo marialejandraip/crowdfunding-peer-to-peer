@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Row, Col, Nav, Tab } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 
 export default function ModalFoundations({show, handleClose, name, info, setData, data}) {
   const initialStateValues = {
@@ -26,37 +26,13 @@ export default function ModalFoundations({show, handleClose, name, info, setData
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-            <Row>
-            <Col sm={3}>
-              <Nav variant="pills" className="flex-column">
-                {info.misions.map((mision, idx)=>(
-                  <Nav.Item key={`${idx}mision`}>
-                    <Nav.Link eventKey={idx}
-                    name="mision"
-                    >{mision}</Nav.Link>
-                  </Nav.Item>
-                ))}
-              </Nav>
-            </Col>
-            <Col sm={9}>
-          <Tab.Content>
-          {info.description.map((description, idx)=>(
-            <Tab.Pane eventKey={idx}>
-              {description}
-            </Tab.Pane> 
-          ))}
-          </Tab.Content>
-          </Col>
-          </Row>
-        </Tab.Container>
-      </Modal.Body>
-      <Modal.Footer>
+        </Modal.Body>
+        <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>
         <Button variant="primary" onClick={handleInputchange}>
-          Guardar
+          Donar
         </Button>
       </Modal.Footer>
     </Modal>
