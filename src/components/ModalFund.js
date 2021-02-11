@@ -13,17 +13,21 @@ export default function ModalFund({name, idx, image}) {
 
   return (
     <>
-    <img src={image} alt=""/>
+    {/* <img src={image} alt=""/> */}
     {/* style={{ 
       backgroundImage:`url(${image})` }} */}
-      <div onClick={handleShow} className={styles.item} key={`${idx}foundation`}><p>{name}</p></div>
+      <div onClick={handleShow} className={styles.item} key={`${idx}foundation`}>
+        <p>{name}</p>
+        <img src={image} alt=""/>
+      </div>
       
       <Modal 
-      style={{display:'none'}}
-      handleClose={handleClose}
-      show={show}
-      name={name}
-      />
+          style={{display:'none'}}
+          handleClose={handleClose}
+          show={show}
+          name={name}
+        />
+      
     </>
   )
 }

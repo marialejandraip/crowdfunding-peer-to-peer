@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 export default function ModalFoundations({show, handleClose, name}) {
   return (
-    <div>
+    <>
        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{name}</Modal.Title>
@@ -18,6 +18,6 @@ export default function ModalFoundations({show, handleClose, name}) {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   )
 }

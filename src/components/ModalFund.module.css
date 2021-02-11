@@ -2,19 +2,27 @@
   width: 24vw;
   height: 24vw;
   border-radius: 24vw;
-  background-color: rgb(175, 175, 175);
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   padding: 4%;
+  overflow: hidden;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.item img{
+  width: 22vw;
+  object-fit: cover;
 }
 
 .item p{
+  position: absolute;
   font-size: 12px;
   padding: 0;
-  color: white;
+  color: black;
   margin-top: 12px;
+  max-width: 24vw;
 }
 
 .item:hover{
