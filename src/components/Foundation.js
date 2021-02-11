@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Foundation.module.css';
-import foundations from '../assets/images/API/data';
+import foundations from '../assets/API/data';
 
 import ModalFund from '../components/ModalFund';
 

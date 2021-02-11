@@ -3,7 +3,7 @@ import React,{ useState } from 'react';
 import Header from '../components/Header';
 //import Footer from '../components/Footer';
 import Foundation from '../components/Foundation';
-//import Forms from '../components/Forms';
+import Forms from '../components/Forms';
 import Forms2 from '../components/Forms2';
 import ProgressBar from '../components/ProgressBar';
 
@@ -12,7 +12,7 @@ import styles from './Dashboard.module.css';
 import { useParams } from "react-router-dom";
 import { signOut } from '../firebaseFunctions';
 
-import foundations from '../assets/images/API/data';
+import foundations from '../assets/API/data';
 import Waiting from '../Views/Waiting';
 
 import '../components.css';
@@ -39,6 +39,7 @@ export default function Dashboard({ isUserLoggedIn }) {
       <Foundation 
         setFound={setFound}
         data={foundations}/>
+      <Forms />
       <Forms2 />
       <ProgressBar />
       {/* <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div> */}
