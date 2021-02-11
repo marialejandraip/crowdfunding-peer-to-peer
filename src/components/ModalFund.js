@@ -12,7 +12,11 @@ export default function ModalFund({name, idx, data}) {
 
   return (
     <>
-      <div onClick={handleShow} className={styles.item} key={`${idx}foundation`}><p>{name}</p></div>
+      <div key={`${idx}foundation`} 
+      onClick={handleShow} 
+      className={styles.item}>
+        <p>{name}</p>
+      </div>
       
       <Modal 
       handleClose={handleClose}

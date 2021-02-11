@@ -21,7 +21,27 @@ export default function Dashboard() {
   let { id } = useParams();
   console.log(id);
 
-  //const isDesktop = window.matchMedia("(max-width: 720px)");
+  const foundation = Object.values(foundations);
+  console.log(foundation)
+  return (
+    <div className={styles.container}>
+      <button onClick={()=>signOut()}>Logout</button>
+      <Header />
+
+      <Foundation 
+        setFound={setFound}
+        data={foundations}/>
+
+      <Forms />
+      <Forms2 />
+      {/* <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div> */}
+      
+      {/*<Footer />*/}
+    </div>
+  )
+}
+
+ //const isDesktop = window.matchMedia("(max-width: 720px)");
 
   // AQUI condicional para mobile y para desktop ¿? en router o hay manera más facil
   // Si media max de 720 entonces renderizar todo 
@@ -37,25 +57,4 @@ export default function Dashboard() {
         //reutr 
   // }
   // en la parte de escritorio
-  
-  const foundation = Object.values(foundations);
-  console.log(foundation)
-  return (
-    <div className={styles.container}>
-      <button onClick={()=>signOut()}>Logout</button>
-      <Header />
-      <div >
-      <Foundation 
-        setFound={setFound}
-        data={foundations}/>
-      </div>
-     
-      <Forms />
-      <Forms2 />
-      {/* <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div> */}
-      
-      {/*<Footer />*/}
-    </div>
-  )
-}
 
