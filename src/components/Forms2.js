@@ -3,13 +3,13 @@ import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
 import storage from '../firebaseConfig.js';
 
-export default function Forms2() {
+export default function Forms_2({data, setData}) {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
         visibleDonors:'', 
       }
-    const [data, setData] = useState (initialStateData)
+    //const [data, setData] = useState (initialStateData)
     const [image, setImage] = useState (null)
     console.log('image=>',image)
 

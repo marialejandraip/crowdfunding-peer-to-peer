@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 
 
-export default function Forms() {
+export default function Forms({data,setData}) {
   const initialStateValues = {
     type: '',
     campaignName: '' , 
@@ -11,7 +11,7 @@ export default function Forms() {
     recaudo: '',
     date: ''
   }
-const [data, setData] = useState (initialStateValues)
+//const [data, setData] = useState (initialStateValues)
 
 const handleInputchange = event => {
   //console.log(event.target.value)

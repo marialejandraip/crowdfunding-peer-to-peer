@@ -1,13 +1,9 @@
 import React from 'react';
 import styles from './Foundation.module.css';
-import foundations from '../assets/API/data';
-
 import ModalFund from '../components/ModalFund';
 
-export default function Foundation() {
-
-const foundation = Object.keys(foundations.foundations)
-
+export default function Foundation({ setData, data, info}) {
+  const foundation = Object.keys(info.foundations)
   return (
     <>
       <h3 className={styles.foundation__title}>Fundación Beneficiada</h3>
@@ -16,9 +12,11 @@ const foundation = Object.keys(foundations.foundations)
           <ModalFund 
           key={`${idx}found`}
           name={name}
-          image={foundations.foundations[name].image}
-          data={foundations.foundations[name]}
-          idx={idx}/>
+          image={info.foundations[name].image}
+          info={info.foundations[name]}
+          idx={idx}
+          data={data}
+          setData={setData}/>
         ))}
       </div>
     </>
