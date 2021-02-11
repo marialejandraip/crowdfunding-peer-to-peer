@@ -6,6 +6,7 @@ import Foundation from '../components/Foundation';
 import Forms from '../components/Forms';
 import Forms2 from '../components/Forms2';
 
+
 import styles from './Dashboard.module.css';
 import { useParams } from "react-router-dom";
 import { signOut } from '../firebaseFunctions';
@@ -57,4 +58,5 @@ export default function Dashboard() {
         //reutr 
   // }
   // en la parte de escritorio
+
 
