@@ -1,10 +1,11 @@
 import React,{ useState } from 'react';
+import MediaQuery from 'react-responsive';
 
 import Header from '../components/Header';
-//import Footer from '../components/Footer';
 import Foundation from '../components/Foundation';
 import Forms from '../components/Forms';
 import Forms2 from '../components/Forms2';
+import Footer from '../components/Footer';
 import ProgressBar from '../components/ProgressBar';
 
 
@@ -34,12 +35,15 @@ export default function Dashboard({ isUserLoggedIn }) {
     campaignImage: null,
     visibleDonors:'', 
   }
-  
-  const [data, setData] =useState(initialStateValues);
-  console.log(data)
 
+
+  
   let { id } = useParams();
   console.log(id);
+
+  const [data, setData] = useState(initialStateValues);
+  const [ruta, setRuta] = useState(id);
+
 
   const foundation = Object.values(foundations);
   console.log(foundation)
@@ -52,21 +56,54 @@ export default function Dashboard({ isUserLoggedIn }) {
   return (
     <>
     {isUserLoggedIn ? 
-      <div className={styles.container}>
+    <div className={styles.container}>
       <button onClick={()=>signOut()}>Logout</button>
       <Header />
-      <Foundation
+      <MediaQuery minDeviceWidth={720}>
+        <Foundation
         setData={setData}
         data={data}
-        info={foundations}/>
-      <Forms 
-      data={data}
-      setData={setData} />
-      <Forms2 data={data}
-      setData={setData} />
-      <div id="afrus-container-form" data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="></div>
-      
-      {/*<Footer />*/}
+        info={foundations}
+        ruta={ruta}
+        setRuta={setRuta}
+        />
+        <Forms 
+        data={data}
+        setData={setData}
+        ruta={ruta} 
+        setRuta={setRuta}
+        />
+        <Forms2 data={data}
+        setData={setData}
+        ruta={ruta}
+        setRuta={setRuta}/>
+      </MediaQuery>
+      <MediaQuery maxDeviceWidth={720}>
+      {!ruta &&
+        <Foundation
+        setData={setData}
+        data={data}
+        info={foundations}
+        ruta={ruta}
+        setRuta={setRuta}
+        />
+      }
+        {ruta === 1 &&
+        <Forms 
+        data={data}
+        setData={setData}
+        ruta={ruta} 
+        setRuta={setRuta}
+        />}
+
+        {ruta === 2 &&
+          <Forms2 data={data}
+          setData={setData}
+          ruta={ruta}
+          setRuta={setRuta}/>
+        }
+        <Footer ruta={ruta} setRuta={setRuta} id={id}/>
+      </MediaQuery>
     </div>
     : <Waiting />
     }
