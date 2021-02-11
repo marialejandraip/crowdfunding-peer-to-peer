@@ -4,7 +4,7 @@ import { Modal, Button, Row, Col, Nav, Tab } from 'react-bootstrap';
 export default function ModalFoundations({show, handleClose, name, data}) {
   console.log(data.description)
   return (
-    <div>
+    <>
        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{name}</Modal.Title>
@@ -42,6 +42,6 @@ export default function ModalFoundations({show, handleClose, name, data}) {
         </Button>
       </Modal.Footer>
     </Modal>
-  </div>
+  </>
   )
 }
