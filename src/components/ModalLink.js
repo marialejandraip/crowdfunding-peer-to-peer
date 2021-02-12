@@ -20,10 +20,9 @@ export default function ModalLink({handleSubmit, campaingId}) {
   
   return (
     <>
-    <Button className="btn btn-bg-ligh text-dark" onClick = {handleShow}> Lanzar Campaña 
+    <Button  id = {styles.button} onClick = {handleShow}> Lanzar Campaña 
     </Button>
-
-      <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>¡Felicidades!</Modal.Title>
         </Modal.Header>

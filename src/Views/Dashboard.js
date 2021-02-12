@@ -34,7 +34,7 @@ export default function Dashboard() {
     campaignVideo: '',
     campaignPodcast: '',
     image: '',
-    visibleDonors:'', 
+    visibleDonors: false, 
   }
 
   let { id } = useParams();
@@ -133,6 +133,5 @@ export default function Dashboard() {
     </div>
     : <Waiting  userEmailVerified={user.email}/> }
     </>
-    
   )
-}
+};
