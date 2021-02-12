@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import ModalLink from './ModalLink';
-import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 import ReactTooltip from 'react-tooltip';
 import styles from './Forms.module.css';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 export default function Forms_2({data, setData, setNow, handleSubmit, campaingId}) {
   setNow(100)
@@ -26,11 +26,10 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
   }
   
     return (
-        <Container fluid
-        className = {styles.container}>
+        <Container fluid className = {styles.container}>
             <Row className = "rows">
             <Col sm={1} md ={2}></Col>
-              <Col className = "columns">
+              <Col sm={10} md ={8} className = "columns">
                 <form className="card card-body input-group" id = {styles.form} > 
                   <Form.Row>
                   <Form.Group as = {Col}>
