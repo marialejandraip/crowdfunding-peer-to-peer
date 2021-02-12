@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, useParams} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import { auth } from './firebaseConfig';
 
 import Start from './Views/Start';
@@ -12,14 +12,11 @@ import './App.css';
 
 
 function App() {
-
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  //const [pending, setPending] = useState(false);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      //console.log(user)
       if (user) {
         localStorage.setItem('newUser', JSON.stringify(user.uid));
         setIsUserLoggedIn(true);
@@ -47,7 +44,7 @@ function App() {
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
         <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
-        <Route path="/blog/:slug">
+        <Route path="/landing/:campaingId">
         <Landing />
       </Route>
       </Switch>
