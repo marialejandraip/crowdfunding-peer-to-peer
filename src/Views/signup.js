@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { createUserEmailAndPassword } from '../firebaseFunctions';
 import { Button } from 'react-bootstrap';
-import firebase from 'firebase/app';
+
 
 import top from '../assets/images/mascaras/Group 34.svg'
 import topDesktop from '../assets/images/mascaras/Group 35.svg';
@@ -15,10 +14,9 @@ import lock from '../assets/images/icons/lock.svg';
 import mail from '../assets/images/icons/mail.svg';
 import user from '../assets/images/icons/user.svg';
 
-import Waiting from './Waiting';
 import '../components.css';
 
-export default function Signup({pending, setPending}) {
+export default function Signup() {
   const [em, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -26,12 +24,11 @@ export default function Signup({pending, setPending}) {
 
   const handleSubmit = async () => {
     console.log('entra aqui')
-    await createUserEmailAndPassword(em, password);
+    await createUserEmailAndPassword(em, password, name);
     //setPending(true)
   }
   return (
     <>
-    {!pending ?
     <div className = "signup"> 
 
     <img className = "img-top" src = {top} alt="" />
@@ -73,10 +70,8 @@ export default function Signup({pending, setPending}) {
     <Link to="/"><button className = "arrow"/></Link>
 
     <img className = "bottom-desktop" src = {bottomDesktop} alt="" />
-  </div> :
-  <Waiting />
-    }
-    </>
+  </div>
+  </>
     
   )
 }

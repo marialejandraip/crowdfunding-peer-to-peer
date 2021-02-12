@@ -3,19 +3,28 @@ import { auth } from './firebaseConfig';
 import { db } from './firebaseConfig';
 import 'firebase/firestore';
 
+
+
 export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
 
 //  ----- Creating user with email and password -----
-export async function createUserEmailAndPassword(email, password) {
+export async function createUserEmailAndPassword(email, password, name) {
 	try {
 		const authentication = await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log(authentication)
       authentication.user
        .sendEmailVerification()
        .then(() => {
-        console.log('email')
-       })
-       .catch((error) => {
+        var user = firebase.auth().currentUser;
+          user.updateProfile({
+          displayName: name,
+          photoURL: "https://example.com/jane-q-user/profile.jpg"
+        }).then(function() {
+  // Update successful.
+        }).catch(function(error) {
+  // An error happened.
+        })
+      }).catch((error) => {
         alert(error);// An error happened.
        });
     return authentication; //   objeto que trae mucas cosas
@@ -49,8 +58,8 @@ export async function newCampaign (orderObj) {
 	}
 };
 
-export const signOut = () => {
-  auth.signOut();
+export const signOut = async () => {
+  await auth.signOut();
   return localStorage.removeItem('token');
 };
 

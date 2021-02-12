@@ -1,17 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 
-
-export default function Forms_2({data, setData, handleSubmit}) {
-    const initialStateData = {
-        campaignVideo: '',
-        campaignPodcast: '',
-        visibleDonors:'',
-        image: '' 
-    }
-    //const [image, setImage] = useState (null)
+export default function Forms_2({data, setData, setNow, handleSubmit}) {
+  setNow(100)
 
     const handleImageSubmit = event => {  
       console.log(event.target.files)
@@ -35,13 +28,7 @@ export default function Forms_2({data, setData, handleSubmit}) {
         [event.target.name] : event.target.value})
       //funcion quee maneja info de los inputs actualizando el estado de estos
     }
-    
-   /*  const handleSubmit = event => {
-      event.preventDefault()
-      console.log('Soy data =>',data)
-      
-       //recibe informacion de evento, cada que se hace click para enviar info del form    
-    } */
+
     return (
         <Container fluid>
             <Row className = "rows">

@@ -8,7 +8,7 @@ export default function Waiting() {
     <div>
       <h1>¡Te hemos enviado un correo!</h1>
       Confirma el link que hemos enviado a tu correo después puedes volver Ingresar
-      <Link to={'/dashboard'}><button >Ingresa</button></Link>
+      <Link to={'/dashboard'}><button onClick={()=>window.location.reload()} >Ingresa</button></Link>
     </div>
   )
 }
