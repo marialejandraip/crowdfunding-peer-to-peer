@@ -1,26 +1,35 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
-import storage from '../firebaseConfig.js';
+import {storage} from '../firebaseConfig.js';
+
 
 export default function Forms_2({data, setData, handleSubmit}) {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
-        visibleDonors:'', 
-      }
-    //const [data, setData] = useState (initialStateData)
-    const [image, setImage] = useState (null)
-    console.log('image=>',image)
-
-    const handleImageChange = event => {
-      if (event.target.file[0]){
-        setImage(event.target.file[0])
-        console.log('image =>',image)
-      }
+        visibleDonors:'',
+        image: '' 
     }
-    
-    
+    const [data, setData] = useState (initialStateData)
+    //const [image, setImage] = useState (null)
+
+    const handleImageSubmit = event => {  
+      console.log(event.target.files)
+     /// Create a root reference
+      const storageRef = storage.ref();
+      // Create a reference to 'mountains.jpg'
+      const campaignImageRef = storageRef.child(event.target.files[0].name);
+      console.log(campaignImageRef.fullPath)
+      // While the file names are the same, the references point to different files
+         // false 
+      const file = event.target.files[0];  // use the Blob or File API
+      campaignImageRef.put(file).then(function(snapshot) {
+          console.log('Uploaded a blob or file!');
+          campaignImageRef.getDownloadURL()
+          .then((url) => setData({...data,image:url}))
+        });                       
+    }
     const handleInputchange = event => {
       setData({
         ...data,
@@ -30,8 +39,7 @@ export default function Forms_2({data, setData, handleSubmit}) {
     
    /*  const handleSubmit = event => {
       event.preventDefault()
-      console.log('Hola soy data =>',data)
-      console.log('image =>',image)
+      console.log('Soy data =>',data)
       
        //recibe informacion de evento, cada que se hace click para enviar info del form    
     } */
@@ -54,7 +62,15 @@ export default function Forms_2({data, setData, handleSubmit}) {
                       name= "campaignPodcast" 
                       onChange = {handleInputchange}>
                     </Form.Control>
-                  </Form.Group>                  
+                  </Form.Group> 
+                  <Form.Group>
+                    <Form.Control 
+                    type="file"
+                    name="image"
+                    label="Impulsa con una foto de campaña"
+                    onChange={handleImageSubmit}>
+                    </Form.Control>
+                  </Form.Group>                 
                   <Form.Check 
                     type="switch"
                     id="custom-switch"
@@ -66,20 +82,7 @@ export default function Forms_2({data, setData, handleSubmit}) {
                   </Button>
                 </form>
               </Col>
-            </Row>
-            <Row>
-              <Col>
-              <Form.Group>
-                    <Form.Control 
-                    type="file"
-                    name="image"
-                    label="Impulsa con una foto de campaña"
-                    onChange={handleImageChange}>
-                    </Form.Control>
-                  </Form.Group>
-              </Col>
-            </Row> 
+            </Row>          
         </Container>
-      )
-    
+      )    
 }
