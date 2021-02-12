@@ -1,6 +1,5 @@
 import React,{ useState } from 'react';
 import MediaQuery from 'react-responsive';
-
 import Header from '../components/Header';
 import Foundation from '../components/Foundation';
 import Forms from '../components/Forms';

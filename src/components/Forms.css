@@ -1,3 +1,16 @@
 .inputForm{
     border-radius: 18px;
 }
+.container{
+    height: 450px;
+}
+.questionButton{
+   
+    background-color: #638ca8;
+    width: 37px;
+    height: 32px; 
+    border-radius: 18px;   
+}
+#inputDate{
+    width: 150px;
+}

@@ -1,101 +1,119 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
-import Footer from '../components/Footer';
-import styles from './Forms.css';
+import './Forms.css';
 
 
 export default function Forms({data,setData, setRuta, ruta}) {
-  const initialStateValues = {
-    type: '',
-    campaignName: '' , 
-    description: '',   
-    url: '', 
-    recaudo: '',
-    date: ''
-  }
-//const [data, setData] = useState (initialStateValues)
-
+  
 const handleInputchange = event => {
-  //console.log(event.target.value)
   setData({
     ...data,
     [event.target.name] : event.target.value})
-  //funcion quee maneja info de los inputs actualizando el estado de estos
 }
 
 const handleSubmit = event => {
   event.preventDefault()
-  console.log(data)
-   //recibe informacion de evento, cada que se hace click para enviar info del form    
+  console.log(data)  
 }
 
   return (
-    <Container fluid>
+    <Container fluid className = "container">
         <Row className = "rows">
           <Col className = "columns">
             <form className="card card-body input-group" onSubmit = {handleSubmit} > 
-              <Form.Group>
-                <Form.Control 
-                  className = {styles.inputForm}
-                  as="select"
-                  custom 
-                  type="text" 
-                  name= "type"
-                  defaultValue={'DEFAULT'} 
-                  onChange = {handleInputchange}>
-                  <option value="DEFAULT" disabled>Tipo de campaña</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group>
-                <Form.Control 
-                  type="text" 
-                  placeholder="Nombre de campaña"
-                  name= "campaignName" 
-                  onChange = {handleInputchange}>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group>
-                <Form.Control 
-                  as="textarea" 
-                  rows = {4}
-                  name ="description"
-                  placeholder ="Describe tu campaña" 
-                  onChange = {handleInputchange}>
-                </Form.Control>
-              </Form.Group>
               <Form.Row>
                 <Form.Group as = {Col}>
                   <Form.Control 
+                    as="select"
+                    column sm={10}
+                    custom 
+                    type="text" 
+                    name= "type"
+                    defaultValue={'DEFAULT'} 
+                    onChange = {handleInputchange}>
+                    <option value="DEFAULT" disabled>Tipo de campaña</option>
+                    <option>CUMPLEAÑOS</option>
+                    <option>MATRIMONIO</option>
+                    <option>BAUTIZO</option>
+                    <option>NAVIDAD</option>
+                    <option>CONDOLENCIAS</option>
+                  </Form.Control>
+                </Form.Group>
+                <Button 
+                  as = {Col} 
+                  column sm={2} 
+                  className = "questionButton"> ?
+                </Button>
+              </Form.Row>
+
+              <Form.Row> 
+                <Form.Group as = {Col}>
+                  <Form.Control
+                    column sm={10} 
+                    type="text" 
+                    placeholder="Nombre de campaña"
+                    name= "campaignName" 
+                    onChange = {handleInputchange}>
+                  </Form.Control>
+                </Form.Group>
+                <Button 
+                  as = {Col} 
+                  column sm={2} 
+                  className = "questionButton"> ?
+                </Button> 
+              </Form.Row>
+
+             
+
+              <Form.Row>
+                <Form.Group as = {Col}>
+                  <Form.Control 
+                    column sm={10} 
+                    as="textarea" 
+                    rows = {4}
+                    name ="description"
+                    placeholder ="Describe tu campaña" 
+                    onChange = {handleInputchange}>
+                  </Form.Control>
+                </Form.Group>
+                <Button 
+                  as = {Col} 
+                  column sm={2} 
+                  className = "questionButton"> ?
+                </Button>
+              </Form.Row>  
+
+              <Form.Row>
+                <Form.Group as = {Col}>
+                  <Form.Control 
+                    column sm={5} 
                     type="number" 
-                    placeholder="Valor a recaudar"
+                    placeholder="Valor $"
                     name= "recaudo" 
                     onChange = {handleInputchange}>
                   </Form.Control>
                 </Form.Group> 
+                <Button 
+                  as = {Col} 
+                  column sm={1} 
+                  className = "questionButton"> ?
+                </Button>
                 <Form.Group as = {Col}>
-                  <Form.Control 
+                  <Form.Control
+                    id = "inputDate" 
+                    column sm={3} 
                     type="date" 
                     placeholder="Fecha límite"
                     name= "date" 
                     onChange = {handleInputchange}>
                   </Form.Control>
-                </Form.Group> 
+                </Form.Group >
+                <Button 
+                  as = {Col} 
+                  column sm={1} 
+                  className = "questionButton"> ?
+                </Button>            
               </Form.Row>
-              <Form.Group>
-                <Form.Control 
-                  type="text" 
-                  name ="url"
-                  placeholder ="Url de campaña" 
-                  onChange = {handleInputchange}>
-                </Form.Control>
-              </Form.Group>
-              <Button className="btn btn-bg-ligh text-dark" onClick = {handleSubmit}> Enviar 
-              </Button>
             </form>
           </Col>
         </Row>     
