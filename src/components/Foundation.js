@@ -7,7 +7,7 @@ export default function Foundation({ setData, data, info, setNow}) {
   setNow(100/3)
   return (
     <>
-      <h3 className={styles.foundation__title}>Fundación Beneficiada</h3>
+      <p className={styles.foundation__title}>Conoce nuestras fundaciones y apoya con la causa con la que más te identifiques</p>
       <div className={styles.foundation__grid}>
         {foundation.map((name, idx)=>(
           <ModalFund 

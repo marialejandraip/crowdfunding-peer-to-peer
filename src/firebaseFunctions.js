@@ -3,8 +3,6 @@ import { auth } from './firebaseConfig';
 import { db } from './firebaseConfig';
 import 'firebase/firestore';
 
-
-
 export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
 
 //  ----- Creating user with email and password -----
@@ -81,14 +79,3 @@ export async function gettingData(collection) {
     return error.message;
   }
 }
-
-/* export function snapshotGettingData(collection, arrayData, setState, campaingId) {
-	db.collection(collection).doc(campaingId).onSnapshot((querySnapshot) => {
-		
-		querySnapshot.forEach((doc) => {
-			const data = doc.data()
-			arrayData.push({...data, idDoc: doc.id})
-		});
-		return setState(arrayData);
-	});
-}; */

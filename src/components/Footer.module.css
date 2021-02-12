@@ -18,17 +18,17 @@
     -webkit-mask-image: url(../assets/images/Arrow.svg);
     mask-image: url(../assets/images/Arrow.svg);
   background-image: url(../assets/images/Arrow.svg);
-  border: 0;
+  bottom: 0;
   width: 39px;
-  height: 34px;
+  height: 30px;
   z-index: 2;
 }
 
 .arrowR{
   background-color: #ffffff00;
   background-image: url(../assets/images/ArrowRt.svg);
-  border: 0;
+  bottom: 0;
   width: 39px;
-  height: 34px;
+  height: 30px;
   z-index: 1;
 }
