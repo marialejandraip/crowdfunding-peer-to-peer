@@ -1,9 +1,10 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-export default function ModalFoundations({show, handleClose, name, info, setData, data}) {
+export default function ModalFoundations({show, handleClose, name, info, setData, data, setRuta, ruta}) {
 
   const handleInputchange = (event, idx) => {
+    setRuta(ruta+1)
     const totalData = { ...data, foundation: name, foundesc: info.description,};
     setData(totalData);
       handleClose();
@@ -21,11 +22,8 @@ export default function ModalFoundations({show, handleClose, name, info, setData
           {info.description}
         </Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Cerrar
-        </Button>
         <Button variant="primary" onClick={handleInputchange}>
-          Donar
+          Apoyar
         </Button>
       </Modal.Footer>
     </Modal>

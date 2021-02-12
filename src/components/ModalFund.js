@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Modal from './Modal';
 import styles from './ModalFund.module.css';
 
-export default function ModalFund({name, idx, data, info, setData, image}) {
+export default function ModalFund({name, idx, data, info, setData, image, setRuta, ruta}) {
 
   const [show, setShow] = useState(false);
 
@@ -32,6 +32,8 @@ export default function ModalFund({name, idx, data, info, setData, image}) {
       info={info}
       data={data}
       setData={setData}
+      setRuta={setRuta}
+      ruta={ruta}
       />
     </>
   )
