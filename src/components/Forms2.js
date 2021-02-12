@@ -11,7 +11,7 @@ export default function Forms_2({data, setData, handleSubmit}) {
         visibleDonors:'',
         image: '' 
     }
-    const [data, setData] = useState (initialStateData)
+    //const [setData] = useState (initialStateData)
     //const [image, setImage] = useState (null)
 
     const handleImageSubmit = event => {  
