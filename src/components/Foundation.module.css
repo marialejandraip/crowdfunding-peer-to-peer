@@ -1,33 +1,35 @@
-.foundation__title{
-  color:#00ADF0;
-  font-size: 20px;
-  text-align: center;
+.foundation__title {
+  color: gray;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
   margin-bottom: 0;
-  margin: 0 5%;
+  margin: 2% 5%;
 }
 
-.foundation__grid{
+.foundation__grid {
   display: grid;
   width: 100%;
   text-align: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px 12px;
+  grid-gap: 12px 12px;
   padding: 4% 8%;
   justify-items: center;
   align-items: center;
+  padding-bottom: 10.6%;
 }
 
 @media screen and (min-width: 720px) {
   h5 {
-    color:#FC571F;
+    color: #fc571f;
     text-align: center;
     width: 100%;
     font-size: 3rem;
     margin-bottom: 30px;
   }
 
-  .foundation__title{
-    color:#00ADF0;
+  .foundation__title {
+    color: #00adf0;
     font-size: 1.5em;
     text-align: center;
     padding: auto;

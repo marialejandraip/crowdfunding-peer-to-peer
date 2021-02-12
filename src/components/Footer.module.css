@@ -10,7 +10,7 @@
   bottom: 0;
   left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   width: 100%;
@@ -19,7 +19,7 @@
 
 .bottomMobile {
   position: absolute;
-  bottom: -40px;
+  bottom: 0px;
   left: 0;
   z-index: -20;
 }

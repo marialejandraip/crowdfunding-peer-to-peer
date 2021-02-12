@@ -71,7 +71,7 @@ export default function Dashboard() {
       <div className={styles.container}>
       <button className={styles.close}onClick={()=>{handleSignOut()}}>X</button>
       <Header user={user.displayName} img={user}/>
-      <h5>¡ Empieza tu campaña! </h5>
+      <h5>¡Empieza tu campaña! </h5>
       <MediaQuery minDeviceWidth={720}>
         <Foundation
         setData={setData}
@@ -127,7 +127,9 @@ export default function Dashboard() {
           setNow={setNow}
           campaingId={campaingId}/>
         }
-        <ProgressBar now={now}/>
+        <div className={styles.progresBarContainer}>
+          <ProgressBar now={now}/>
+        </div>
         <Footer ruta={ruta} setRuta={setRuta} id={id}/>
       </MediaQuery>
     </div>
