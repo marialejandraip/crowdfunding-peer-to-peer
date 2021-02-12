@@ -3,6 +3,7 @@ import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 
+
 export default function Forms_2({data, setData, setRuta, ruta}) {
     const initialStateData = {
         campaignVideo: '',
@@ -13,8 +14,7 @@ export default function Forms_2({data, setData, setRuta, ruta}) {
     const [data, setData] = useState (initialStateData)
     //const [image, setImage] = useState (null)
 
-    const handleImageSubmit = event => {
-
+    const handleImageSubmit = event => {  
       console.log(event.target.files)
      /// Create a root reference
       const storageRef = storage.ref();
@@ -82,8 +82,7 @@ export default function Forms_2({data, setData, setRuta, ruta}) {
                   </Button>
                 </form>
               </Col>
-            </Row>
+            </Row>          
         </Container>
-      )
-    
+      )    
 }

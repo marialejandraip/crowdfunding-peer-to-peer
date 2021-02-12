@@ -26,9 +26,8 @@ export default function ModalFoundations({show, handleClose, name, info, setData
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         
-      </Modal.Body>
-      <Modal.Footer>
+        </Modal.Body>
+        <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>
