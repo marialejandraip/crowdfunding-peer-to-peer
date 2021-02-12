@@ -15,7 +15,7 @@ export default function Footer({ruta, setRuta, id}) {
           <Link to={`/dashboard/${ruta}`}><button onClick={() => setRuta(ruta-1)} className={styles.arrow}/></Link>
         }
         {ruta !== 2 &&
-          <Link to={`/dashboard/${ruta}`}><button onClick={() => setRuta(ruta+1)} className={styles.arrowR}/></Link>
+          <Link to={`/dashboard/${ruta}`}><button onClick={() => {setRuta(ruta+1);}} className={styles.arrowR}/></Link>
         }
       </div>
     </>

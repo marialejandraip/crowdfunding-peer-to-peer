@@ -39,6 +39,7 @@ export default function Dashboard({ isUserLoggedIn }) {
 
   const [data, setData] = useState(initialStateValues);
   const [ruta, setRuta] = useState(id);
+  const [now, setNow] =useState(0);
 
 
   const foundation = Object.values(foundations);
@@ -79,12 +80,14 @@ export default function Dashboard({ isUserLoggedIn }) {
       </MediaQuery>
       <MediaQuery maxDeviceWidth={720}>
       {!ruta &&
+        
         <Foundation
         setData={setData}
         data={data}
         info={foundations}
         ruta={ruta}
         setRuta={setRuta}
+        setNow={setNow}
         />
       }
         {ruta === 1 &&
@@ -93,6 +96,7 @@ export default function Dashboard({ isUserLoggedIn }) {
         setData={setData}
         ruta={ruta} 
         setRuta={setRuta}
+        setNow={setNow}
         />}
 
         {ruta === 2 &&
@@ -100,9 +104,10 @@ export default function Dashboard({ isUserLoggedIn }) {
           setData={setData}
           ruta={ruta}
           setRuta={setRuta}
-          handleSubmit ={handleSubmit}/>
+          handleSubmit ={handleSubmit}
+          setNow={setNow}/>
         }
-        <ProgressBar />
+        <ProgressBar now={now}/>
         <Footer ruta={ruta} setRuta={setRuta} id={id}/>
       </MediaQuery>
     </div>
