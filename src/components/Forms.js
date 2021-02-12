@@ -22,6 +22,7 @@ const handleInputchange = event => {
           <Col sm={10} md ={8} className = "columns">
             <form className="card card-body input-group" id = {styles.form}>
               <Form.Row >
+
                 <Form.Group as = {Col}>
                   <Form.Control 
                     as="select"

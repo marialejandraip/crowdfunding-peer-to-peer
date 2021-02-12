@@ -9,7 +9,6 @@
 #form{
     border:0;    
 }
-
 .questionButton{   
     background-color: #638ca865;
     width: 25px;
@@ -22,16 +21,19 @@
     align-items: center;
     justify-content: center;
     padding:auto;
-    margin-top: 30px;
 }
+
 
 #inputDate{
     width: 150px;
 }
 .input{
     border: 1px solid #0ABFE5;
-    border-radius: 18px;
-    margin-top: 30px;
+    border-radius: 20px;
+    margin: auto;
+}
+#date{
+    
 }
 
 .switch{
