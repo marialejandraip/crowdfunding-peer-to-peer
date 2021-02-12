@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import styles from './Forms.module.css';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
   
@@ -19,9 +20,8 @@ const handleInputchange = event => {
         <Row className = "rows">
           <Col sm={1} md ={2}></Col>
           <Col sm={10} md ={8} className = "columns">
-            <form className="card card-body input-group" id = {styles.form}
-             >
-              <Form.Row className = {styles.rows}>
+            <form className="card card-body input-group" id = {styles.form}>
+              <Form.Row >
                 <Form.Group as = {Col}>
                   <Form.Control 
                     as="select"
@@ -37,7 +37,6 @@ const handleInputchange = event => {
                     <option>MATRIMONIO</option>
                     <option>BAUTIZO</option>
                     <option>NAVIDAD</option>
-                    <option>CONDOLENCIAS</option>
                   </Form.Control>
                 </Form.Group>
                 <Button 
@@ -56,7 +55,7 @@ const handleInputchange = event => {
                 </ReactTooltip>
               </Form.Row>
 
-              <Form.Row className = {styles.container}> 
+              <Form.Row> 
                 <Form.Group as = {Col}>
                   <Form.Control
                     column sm={11} md={11}
