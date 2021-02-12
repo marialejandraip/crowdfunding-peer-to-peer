@@ -17,8 +17,7 @@ import { signOut } from '../firebaseFunctions';
 import { newCampaign } from '../firebaseFunctions';
 
 import '../components.css';
-import { render } from '@testing-library/react';
-import ModalLink from '../components/ModalLink';
+
 
 
 export default function Dashboard() {
@@ -70,8 +69,9 @@ export default function Dashboard() {
     <>
     {userEmailVerified ?
       <div className={styles.container}>
-      <button onClick={()=>{handleSignOut()}}>Logout</button>
+      <button className={styles.close}onClick={()=>{handleSignOut()}}>X</button>
       <Header user={user.displayName} img={user}/>
+      <h5>¡ Empieza tu campaña! </h5>
       <MediaQuery minDeviceWidth={720}>
         <Foundation
         setData={setData}
@@ -93,7 +93,8 @@ export default function Dashboard() {
         ruta={ruta}
         setRuta={setRuta}
         handleSubmit ={handleSubmit}
-        setNow={setNow}/>
+        setNow={setNow}
+        campaingId={campaingId}/>
         
       </MediaQuery>
       <MediaQuery maxDeviceWidth={720}>
@@ -130,8 +131,7 @@ export default function Dashboard() {
         <Footer ruta={ruta} setRuta={setRuta} id={id}/>
       </MediaQuery>
     </div>
-    : <Waiting /> }
+    : <Waiting  userEmailVerified={user.email}/> }
     </>
-    
   )
-}
+};

@@ -11,7 +11,7 @@ export default function Header({user, img}) {
       <img src={dashboard} className={styles.mask} alt=''/>
       <div className={styles.header}>
         <img src={User} alt=""/>
-        <h4>{user}</h4>
+        <h6>{user}</h6>
       </div>
     </>
   )

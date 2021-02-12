@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import helper from '../assets/images/helper.png';
+
 import { useParams} from 'react-router-dom';
 import { db } from '../firebaseConfig';
 
@@ -10,12 +11,11 @@ export default function Landing() {
   
   useEffect(()=>{
     var docRef = db.collection('campaigns').doc(campaingId);
-docRef.get().then(function(doc) {
-  if (doc.exists) {
+    docRef.get().then(function(doc) {
+    if (doc.exists) {
     console.log("Document data:", doc.data());
     setCampaingData(doc.data())
       } else {
-    // doc.data() will be undefined in this case
     console.log("No such document!");
     }
 

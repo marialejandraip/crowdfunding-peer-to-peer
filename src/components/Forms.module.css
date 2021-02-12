@@ -6,11 +6,23 @@
     border:0;    
 }
 .questionButton{   
-    background-color: #638ca8;
-    width: 37px;
-    height: 32px; 
-    border-radius: 15px;   
+    background-color: #638ca865;
+    width: 25px;
+    height: 25px;
+    font-size: 1em;
+    border-radius: 15px;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:auto;
 }
+
+.questionButton:hover{
+
+}
+
 #inputDate{
     width: 150px;
 }
@@ -21,13 +33,7 @@
 #date{
     
 }
-#button{
-    margin-top: 20px;
-    color: #ffffff;
-    background-color: #FC571F; 
-    border:0;
-    border-radius: 15px;
-}
+
 .switch{
     height: 20px;
 }

@@ -3,8 +3,6 @@ import { auth } from './firebaseConfig';
 import { db } from './firebaseConfig';
 import 'firebase/firestore';
 
-
-
 export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
 
 //  ----- Creating user with email and password -----
@@ -13,8 +11,8 @@ export async function createUserEmailAndPassword(email, password, name) {
 		const authentication = await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log(authentication)
       authentication.user
-       .sendEmailVerification()
-       .then(() => {
+        .sendEmailVerification()
+        .then(() => {
         var user = firebase.auth().currentUser;
           user.updateProfile({
           displayName: name,
@@ -26,7 +24,7 @@ export async function createUserEmailAndPassword(email, password, name) {
         })
       }).catch((error) => {
         alert(error);// An error happened.
-       });
+      });
     return authentication; //   objeto que trae mucas cosas
 	} catch (error) {
 		let errorMessage = error.message;
@@ -72,23 +70,3 @@ export const emailVerification = () => user
   .catch((error) => {
     console.log(error);
   });
-
-export async function gettingData(collection) {
-  try {
-    const projectData = await db.collection(collection).get();
-    return projectData;
-  } catch (error) {
-    return error.message;
-  }
-}
-
-/* export function snapshotGettingData(collection, arrayData, setState, campaingId) {
-	db.collection(collection).doc(campaingId).onSnapshot((querySnapshot) => {
-		
-		querySnapshot.forEach((doc) => {
-			const data = doc.data()
-			arrayData.push({...data, idDoc: doc.id})
-		});
-		return setState(arrayData);
-	});
-}; */

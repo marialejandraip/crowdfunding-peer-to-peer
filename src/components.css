@@ -96,9 +96,9 @@ input {
     background-image: url(./assets/images/Arrow.svg);
     border: 0;
     width: 39px;
-    height: 34px;
+    height: 33px;
     margin-left: 16%;
-    margin-top: 37%;
+    margin-top: 30%;
     z-index: 2;
 }
 label{

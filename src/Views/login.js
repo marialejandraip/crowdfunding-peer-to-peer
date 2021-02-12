@@ -15,7 +15,6 @@ import mail from '../assets/images/icons/mail.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components.css';
 
-
 export default function Login() {
   let history= useHistory()
   const [email, setEmail] = useState('');

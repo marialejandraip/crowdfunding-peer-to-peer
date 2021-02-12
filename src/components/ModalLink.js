@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import helper from '../assets/images/helper.png';
 import { useHistory } from 'react-router-dom';
-import styles from './Forms.module.css'
+import styles from './ModalLink.module.css';
 
 export default function ModalLink({handleSubmit, campaingId}) {
   let history = useHistory()
@@ -24,10 +24,14 @@ export default function ModalLink({handleSubmit, campaingId}) {
     </Button>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-          <img src={helper} alt=""/>
+          <Modal.Title>¡Felicidades!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        
+        <Modal.Body>
+          Woohooo!!
+          Haz terminado tu campaña, ahora pasará a un proceso de aprobación pero por ahora puedes ver como está quedando!
+          <img  className ={styles.helper}src={helper} alt=""/>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
