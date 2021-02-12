@@ -3,6 +3,10 @@ import ReactPlayer from "react-player";
 import ReactAudioPlayer from "react-audio-player";
 
 import port_BD from "../assets/images/birthday.png";
+import whatsapp from "../assets/images/icons/whatsapp.svg";
+import twitter from "../assets/images/icons/twitter.svg";
+import facebook from "../assets/images/icons/facebook.svg";
+
 
 import ProgressBar from "react-bootstrap/ProgressBar";
 
@@ -56,6 +60,18 @@ const Landing = () => {
           autoPlay
           controls
         />
+      </div>
+      <div className={styles.shared_sn}>
+        <p>Comparte</p>
+        <a href="whatsapp://send?text=texto%20con%20URL" >
+          <img src={whatsapp}></img>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" >
+          <img src={facebook}></img>
+        </a>
+        <a href="https://twitter.com/?status=" >
+          <img src={twitter}></img>
+        </a>
       </div>
     </div>
   );
