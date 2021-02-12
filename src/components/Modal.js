@@ -39,3 +39,4 @@ export default function ModalFoundations({show, handleClose, name, info, setData
   </>
   )
 }
+ 

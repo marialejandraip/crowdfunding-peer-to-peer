@@ -1,53 +1,41 @@
 {
   "foundations":{
-    "Asociación bancos de alimentos":{
-      "image": "assets/fundaciones/Abaco 1.png",
-      "misions":["ALIMENTACIÓN PARA UN NIÑO","ALIMENTACIÓN PARA UN ADULTO MAYOR", "ALIMENTACIÓN PARA UNA FAMILIA EN CONDICIÓN DE VULNERABILIDAD", "CONSTRUCCIÓN BANCO DE ALIMENTOS"],
-      "description":["400 millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad.",
-      "millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad.",
-      "millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad.",
-      "millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad."]
-
+    "ABACO":{
+      "image": "assets/fundaciones/abaco.svg",
+      "description":"Somos la red de bancos de alimentos de Colombia Rescatamos los excedentes alimentarios del sector agropecuario, industrial, comercial, hotelero, restaurantes, personas naturales, y los redistribuimos a población vulnerable. Cada año evitamos que se tiren a la basura 25.000 toneladas de comida apta para el consumo humano."
     },
-    "Banco de alimentos de Neiva ":{
-      "image": "assets/fundaciones/Banco alimentos Neiva 1.png",
-      "misions":["ALIMENTACIÓN PARA UN NIÑO"],
-      "description":["millones de niños en todo el mundo se van a la cama todas las noches con hambre. Crea tu campaña y dona lo que recaudes para apadrinar la alimentación de un grupo de niños y niñas en condición de vulnerabilidad."]
+    "Fundación Casa Ronald McDonald Colombia":{
+      "image": "assets/fundaciones/CRMD.svg",
+      "description":"La Fundación Casa Ronald McDonald Colombia es una organización sin ánimo de lucro dedicada a trabajar por el bienestar de cientos de familias con hijos en tratamientos médicos prolongados.Ofrecemos un espacio gratuito, diverso, respetuoso y digno; el cual cada familia hace suyo por el tiempo que necesite."
     },
-    "Banco de alimentos de Zipaquirá":{
-      "image": "assets/fundaciones/Zipaquira 1.png",
-      "misions":[],
-      "description":[]
+    "Fundación Fruto Bendito":{
+      "image": "assets/fundaciones/frutoBendito.svg",
+      "description":"Somos la familia Fruto Bendito y trabajamos para proteger a la primera infancia educando y sembrando amor en sus familias y cuidadores. Recorremos Colombia transformando por medio del amor y la educación porque tenemos la visión de un país donde seamos #IgualesConAmor."
     },
-    "Banco de alimentos de San Andrés":{
-      "image": "assets/fundaciones/Collage.png",
-      "misions":[],
-      "description":[]
+    "Fundación Cardioinfantil":{
+      "image": "assets/fundaciones/cardioInfantil.svg",
+      "description":"Desde hace más de 46 años, la FCI ha enfocado sus esfuerzos en dar tratamiento médico de alta complejidad y gratuito, a niños de escasos recursos con enfermedades cardiovasculares. En este tiempo, la FCI ha valorado más de 50.000 niños, de los cuales 16.000 han sido beneficiados."
     },
-    "Banco de alimentos de Cartagena":{
-      "image": "assets/fundaciones/cartagena 1.png",
-      "misions":[],
-      "description":[]
+    "Fundación Nutrinfantil":{
+      "image": "assets/fundaciones/nutrinfantil.svg",
+      "description":"Estamos comprometidos en trabajar por reducir y erradicar la pobreza en Colombia. Por esto desde el 2015 adoptamos la metodología FXB Village que nos brinda los soportes para cumplir nuestra misión. Ofrecemos programas para desarrollar en los niños y jóvenes, valores y habilidades para la vida."
     },
-    "Banco de alimentos de Medellín":{
-      "image": "assets/fundaciones/medellin 1.png",
-      "misions":[],
-      "description":[]
+    "Fundación Inti":{
+      "image": "assets/fundaciones/inti.svg",
+      "description":"Nuestra misión es Brindar apoyo y servicio integral a niños, jóvenes y adultos sobrevivientes de quemaduras y a sus familias, de tal manera que tengan acceso a un proceso de rehabilitación y recuperación digno y así facilitar su reintegro a la sociedad."
     },
-    "Banco de alimentos de Santa Marta ":{
-      "image": "assets/fundaciones/descarga 1.png",
-      "misions":[],
-      "description":[]
+    "Save The Children":{
+      "image": "assets/fundaciones/saveTheChildren.svg",
+      "description":"Nuestra misión es inspirar avances relevantes en la forma en que el mundo percibe, convive y trata a niñas, niños y adolescentes; puedes sumarte a nosotros para brindarles educación, protección, ayuda en emergencias y abrirles espacios de participación en entornos que garanticen su bienestar."
     },
-    "Banco de alimentos de Pasto":{
-      "image": "assets/fundaciones/pasto2 1.png",
-      "misions":[],
-      "description":[]
+    "Fundación Niños de los Andes":{
+      "image": "assets/fundaciones/abaco.svg",
+      "description":"Contribuir con el restablecimiento y defensa de los derechos fundamentales de los niños, niñas y jóvenes en situación de calle y con sus derechos vulnerados, facilitar desde el amor su desafío de transformación aportando al desarrollo de capacidades que les permitan agenciar su futuro"
     },
-    "Banco de alimentos de Guajira":{
-      "image": "assets/fundaciones/Guajira 1.png",
-      "misions":[],
-      "description":[]
+    "Cruz Roja Colombiana":{
+      "image": "assets/fundaciones/cruzRoja.svg",
+      "description":"Salvar vidas, prevenir y aliviar el sufrimiento humano en todas las circunstancias, fortaleciendo las capacidades comunitarias, promoviendo una cultura de paz, la inclusión social, la salud, la gestión del riesgo de desastres, adaptación al cambio climático, la educación, los derechos humanos y el derecho internacional humanitario"    
     }
-  }
+  }   
 }
+
