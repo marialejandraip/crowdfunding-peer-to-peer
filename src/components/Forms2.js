@@ -3,7 +3,6 @@ import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 
-
 export default function Forms_2({data, setData, setNow, handleSubmit}) {
   setNow(100)
 
