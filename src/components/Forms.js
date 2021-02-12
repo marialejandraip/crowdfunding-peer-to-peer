@@ -1,38 +1,20 @@
-import React, {useState} from 'react';
-import { Form, Button, Row, Col, Container } from 'react-bootstrap';
-import Footer from '../components/Footer';
+import React from 'react';
+import { Form, Row, Col, Container } from 'react-bootstrap';
 
-
-export default function Forms({data,setData, setRuta, ruta}) {
-  const initialStateValues = {
-    type: '',
-    campaignName: '' , 
-    description: '',   
-    url: '', 
-    recaudo: '',
-    date: ''
-  }
-//const [data, setData] = useState (initialStateValues)
+export default function Forms({data,setData, setNow}) {
+setNow(100/3*2)
 
 const handleInputchange = event => {
-  //console.log(event.target.value)
   setData({
     ...data,
     [event.target.name] : event.target.value})
-  //funcion quee maneja info de los inputs actualizando el estado de estos
-}
-
-const handleSubmit = event => {
-  event.preventDefault()
-  console.log(data)
-   //recibe informacion de evento, cada que se hace click para enviar info del form    
 }
 
   return (
     <Container fluid>
         <Row className = "rows">
           <Col className = "columns">
-            <form className="card card-body input-group" onSubmit = {handleSubmit} > 
+            <form className="card card-body input-group" > 
               <Form.Group>
                 <Form.Control 
                   as="select"
@@ -92,8 +74,8 @@ const handleSubmit = event => {
                   onChange = {handleInputchange}>
                 </Form.Control>
               </Form.Group>
-              <Button className="btn btn-bg-ligh text-dark" onClick = {handleSubmit}> Enviar 
-              </Button>
+             {/*  <Button className="btn btn-bg-ligh text-dark" onClick = {handleSubmit}> Enviar 
+              </Button> */}
             </form>
           </Col>
         </Row>     
