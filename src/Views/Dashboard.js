@@ -35,7 +35,7 @@ export default function Dashboard() {
     campaignVideo: '',
     campaignPodcast: '',
     image: '',
-    visibleDonors:'', 
+    visibleDonors: false, 
   }
 
   let { id } = useParams();
