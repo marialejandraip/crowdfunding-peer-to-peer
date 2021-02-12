@@ -11,8 +11,8 @@ export default function Footer({ruta, setRuta, id}) {
 
   
   return (
-    <>
-      <img src={bottomMobile} alt="" className={styles.item} />
+    <div className={styles.item}>
+      <img src={bottomMobile} alt="" />
       <div className={styles.nav} >
 
         { ruta === 0 && 
@@ -30,6 +30,6 @@ export default function Footer({ruta, setRuta, id}) {
           <Link to={`/dashboard/${ruta-1}`}><button onClick={() => setRuta(ruta-1)} className={styles.arrow}/></Link>
         }
       </div>
-    </>
+    </div>
   )
 }
