@@ -34,7 +34,7 @@ function App() {
   if (loading) return <span>Loading...</span>;
 
   return (
-    <Router>
+<Router>
       <Switch>
         <Route exact path='/'>
           <Start />
@@ -45,6 +45,7 @@ function App() {
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
         <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route path="/Landing" exact component={Landing} />
       </Switch>
     </Router>
   );
