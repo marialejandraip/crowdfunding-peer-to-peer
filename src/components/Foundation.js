@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Foundation.module.css';
 import ModalFund from '../components/ModalFund';
 
-export default function Foundation({ setData, data, info, setNow}) {
+export default function Foundation({ setData, data, info, setNow, setRuta, ruta}) {
   const foundation = Object.keys(info.foundations);
   setNow(100/3)
   return (
@@ -17,7 +17,9 @@ export default function Foundation({ setData, data, info, setNow}) {
           info={info.foundations[name]}
           idx={idx}
           data={data}
-          setData={setData}/>
+          setData={setData}
+          setRuta={setRuta}
+          ruta={ruta}/>
         ))}
       </div>
       

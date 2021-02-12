@@ -1,6 +1,9 @@
 .container{
-    /*height: 450px;
-    width: 93%;*/
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #form{
     border:0;    
@@ -19,16 +22,14 @@
     padding:auto;
 }
 
-.questionButton:hover{
-
-}
 
 #inputDate{
     width: 150px;
 }
 .input{
     border: 1px solid #0ABFE5;
-    border-radius: 18px;
+    border-radius: 20px;
+    margin: auto;
 }
 #date{
     
