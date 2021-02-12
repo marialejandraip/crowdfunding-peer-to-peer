@@ -116,7 +116,7 @@ const handleInputchange = event => {
                     column sm={5} 
                     type="number" 
                     className = {styles.input} 
-                    placeholder="Valor $"
+                    placeholder="Meta Recaudo"
                     name= "recaudo" 
                     onChange = {handleInputchange}>
                   </Form.Control>
