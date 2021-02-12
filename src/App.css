@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+.waiting {
+  width: 85%;
+  margin: 15%;
+  text-align: center;
+}
+
+.waiting button {
+  background-color: #0ABFE5;
+  color: #ffff;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

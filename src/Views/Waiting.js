@@ -1,9 +1,9 @@
 import React from 'react';
-//import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 export default function Waiting() {
-  //let history = useHistory();
+
   return (
     <div>
       <h1>¡Te hemos enviado un correo!</h1>

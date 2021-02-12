@@ -1,10 +1,12 @@
 import React from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
+import ModalLink from './ModalLink';
+import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 import ReactTooltip from 'react-tooltip';
 import styles from './Forms.module.css';
 
-export default function Forms_2({data, setData, setNow, handleSubmit}) {
+export default function Forms_2({data, setData, setNow, handleSubmit, campaingId}) {
   setNow(100)
 
     const handleImageSubmit = event => {  
@@ -135,15 +137,13 @@ export default function Forms_2({data, setData, setNow, handleSubmit}) {
                         "Sube la imágen que usarás para tu campaña"
                     </ReactTooltip> 
                   </Form.Row>
-                  <Form.Check 
-                    
+                  <Form.Check                     
                     id = {styles.switch}
                     type="switch"
                     label="Donantes Visibles"
                     name="visibleDonors"
-                    onChange={handleInputchange}/>    
-                  <Button  id = {styles.button} onClick = {handleSubmit}> Lanzar Campaña 
-                  </Button>
+                    onChange={handleInputchange}/>                     
+                    <ModalLink handleSubmit={handleSubmit} campaingId={campaingId}/>
                 </form>
               </Col>
             </Row>          
