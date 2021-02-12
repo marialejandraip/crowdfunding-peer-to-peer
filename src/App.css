@@ -29,14 +29,35 @@
 }
 
 .waiting {
-  width: 85%;
-  margin: 15%;
+  width: 100%;
+  margin: auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
 }
 
-.waiting button {
+.waiting-btn {
   background-color: #0ABFE5;
   color: #ffff;
+  border:none;
+  display: block;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: #282c34;
+  margin-top: 50px;
+  margin: auto;
+  padding: 20px;
+}
+.waiting p{
+  margin-bottom: 50px;
+}
+
+.helper-img{
+  width: 100%;
+  height: auto;
 }
 
 

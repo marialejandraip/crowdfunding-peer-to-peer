@@ -7,8 +7,7 @@ import whatsapp from "../assets/images/icons/whatsapp.svg";
 import twitter from "../assets/images/icons/twitter.svg";
 import facebook from "../assets/images/icons/facebook.svg";
 import photoUser from "../assets/images/user.png";
-import fundima from "../assets/images/frutoBendito.svg";
-
+import fundima from "../assets/images/abaco.svg";
 
 import ProgressBar from "react-bootstrap/ProgressBar";
 
@@ -22,7 +21,7 @@ export default function Landing() {
     campaignName: '' , 
     description: '',   
     url: '', 
-    recaudo: '',
+    donations: '',
     date: '',
     campaignVideo: '',
     campaignPodcast: '',
@@ -72,10 +71,10 @@ export default function Landing() {
         </div>
         <div className={styles.container_recaudo_camp}>
           <p>$0</p>
-          <p>${campaingData.recaudo}</p>
+          <p>${campaingData.donations}</p>
         </div>
         <div className={styles.container_progress_bar}>
-          <ProgressBar variant="success" now={40} />
+          <ProgressBar variant="success" now={5} />
         </div>
       </div>
       <div className={styles.elementor_afrus}>
@@ -86,6 +85,7 @@ export default function Landing() {
         <script src="https://my.afrus.app/template/index.js"></script>
       </div>
       <div className={styles.player_video}>
+        <h1>Conoce más a fondo sobre la iniciativa</h1>
         <ReactPlayer
           className="react-player"
           url={campaingData.campaignVideo}
@@ -94,9 +94,10 @@ export default function Landing() {
         />
       </div>
       <div className={styles.player_podcast}>
+      <h1>Escucha el Podcast que quiero compartir sobre mi iniciativa</h1>
         <ReactPlayer
           className="react-player"
-          url={campaingData.campaignPodcast}
+          url= "https://soundcloud.com/fundacionmedife/dr-humberto-debat-biologo?in=fundacionmedife/sets/38-2020-noviembre-28"
           controls={true}
           width="100%"
         />

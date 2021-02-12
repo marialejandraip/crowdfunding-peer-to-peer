@@ -1,69 +1,148 @@
 import React from 'react';
-import { Form, Row, Col, Container, FormControl} from 'react-bootstrap';
+import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import ModalLink from './ModalLink';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
+import ReactTooltip from 'react-tooltip';
+import styles from './Forms.module.css';
 
 export default function Forms_2({data, setData, setNow, handleSubmit, campaingId}) {
   setNow(100)
 
     const handleImageSubmit = event => {  
-      console.log(event.target.files)
-     /// Create a root reference
       const storageRef = storage.ref();
-      // Create a reference to 'mountains.jpg'
       const campaignImageRef = storageRef.child(event.target.files[0].name);
-      console.log(campaignImageRef.fullPath)
-      // While the file names are the same, the references point to different files
-         // false 
-      const file = event.target.files[0];  // use the Blob or File API
+      const file = event.target.files[0];  
       campaignImageRef.put(file).then(function(snapshot) {
-          console.log('Uploaded a blob or file!');
           campaignImageRef.getDownloadURL()
           .then((url) => setData({...data,image:url}))
         });                       
     }
     const handleInputchange = event => {
-      setData({
-        ...data,
-        [event.target.name] : event.target.value})
-      //funcion quee maneja info de los inputs actualizando el estado de estos
-    }
-
+      setData( previousState => ({
+        ...previousState,
+          [event.target.name] : event.target.value
+    }))
+  }
+  
     return (
-        <Container fluid>
+        <Container fluid 
+        rows sm = {20}
+        className = {styles.container}>
             <Row className = "rows">
               <Col className = "columns">
-                <form className="card card-body input-group" > 
-                <label htmlFor="basic-url">Video de campaña</label>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                    </InputGroup.Prepend>
-                    <FormControl id="basic-url" aria-describedby="basic-addon3" name= "campaignVideo" onChange = {handleInputchange} />
-                </InputGroup>
-
-                  <Form.Group>
+                <form className="card card-body input-group" id = {styles.form} > 
+                  <Form.Row>
+                  <Form.Group as = {Col}>
                     <Form.Control 
+                      className = {styles.input} 
+                      column sm={10}
                       type="text" 
-                      placeholder="Podcast de campaña"
-                      name= "campaignPodcast" 
+                      name ="url"
+                      placeholder ="Url de campaña" 
                       onChange = {handleInputchange}>
                     </Form.Control>
-                  </Form.Group> 
-                  <Form.Group>
-                    <Form.Control 
-                    type="file"
-                    name="image"
-                    label="Impulsa con una foto de campaña"
-                    onChange={handleImageSubmit}>
-                    </Form.Control>
-                  </Form.Group>                 
-                  <Form.Check 
+                  </Form.Group>
+                  <Button 
+                    data-tip
+                    data-for = "input6" 
+                    as = {Col} 
+                    column sm={1} 
+                    className = {styles.questionButton}> ?
+                  </Button>
+                  <ReactTooltip
+                    id = "input6"
+                    place = "top"                  
+                    type = "info"
+                    effect = "solid">
+                      "Éste será el identificador de la página de tu campaña, máximo tres palabras sin tildes, separadas por guion medio"
+                  </ReactTooltip>  
+                </Form.Row> 
+                  <Form.Row>
+                    <Form.Group as = {Col}>
+                        <Form.Control
+                          className = {styles.input} 
+                          type="text" 
+                          placeholder="Url Video de campaña"
+                          name="campaignVideo" 
+                          column sm={10}
+                          onChange = {handleInputchange}>
+                        </Form.Control>
+                      </Form.Group> 
+                      <Button
+                        data-tip
+                        data-for = "input7" 
+                        as = {Col} 
+                        column sm={2} 
+                        className = {styles.questionButton}> ?
+                      </Button>
+                      <ReactTooltip
+                        id = "input7"
+                        place = "top"                  
+                        type = "info"
+                        effect = "solid">
+                          "Impulsa tu campaña con un video que ayude a sensibilizar a los donantes, ingresa la url de tu video"
+                      </ReactTooltip> 
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as = {Col}>
+                      <Form.Control
+                        className = {styles.input}  
+                        type="text" 
+                        placeholder="Url Podcast de campaña"
+                        name= "campaignPodcast" 
+                        column sm={10}
+                        onChange = {handleInputchange}>
+                      </Form.Control>
+                    </Form.Group>
+                    <Button
+                      data-tip
+                      data-for = "input8" 
+                      as = {Col}
+                      column sm={2} 
+                      className = {styles.questionButton}> ?
+                    </Button>
+                      <ReactTooltip
+                          id = "input8"
+                          place = "top"                  
+                          type = "info"
+                          effect = "solid">
+                            "Un posdcast también pude ayudar a sensibilizar, ingresa la url de tu posdcast alojado previamente en https://soundcloud.com"
+                      </ReactTooltip> 
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as = {Col}>
+                      <Form.Control
+                        className = {styles.input}
+                        id = {styles.date}  
+                        type="file"
+                        name="image"
+                        column sm={10}
+                        label="Impulsa con una foto de campaña"
+                        onChange={handleImageSubmit}>
+                      </Form.Control>
+                    </Form.Group>
+                    <Button 
+                      data-tip
+                      data-for = "input9"
+                      as = {Col}
+                      column sm={2} 
+                      className = {styles.questionButton}> ?
+                    </Button>
+                    <ReactTooltip
+                      id = "input9"
+                      place = "top"                  
+                      type = "info"
+                      effect = "solid">
+                        "Sube la imágen que usarás para tu campaña"
+                    </ReactTooltip> 
+                  </Form.Row>
+                  <Form.Check                     
+                    id = {styles.switch}
                     type="switch"
-                    id="custom-switch"
-                    label="Tener visibles los donantes"
+                    label="Donantes Visibles"
                     name="visibleDonors"
-                    onChange={handleInputchange}/>
+                    onChange={handleInputchange}/>                     
                     <ModalLink handleSubmit={handleSubmit} campaingId={campaingId}/>
                 </form>
               </Col>

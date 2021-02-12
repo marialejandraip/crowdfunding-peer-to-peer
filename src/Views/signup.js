@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { createUserEmailAndPassword } from '../firebaseFunctions';
 import { Button } from 'react-bootstrap';
 
-
 import top from '../assets/images/mascaras/Group 34.svg'
 import topDesktop from '../assets/images/mascaras/Group 35.svg';
 import bottom from '../assets/images/mascaras/XMLID 9.svg';
@@ -69,6 +68,5 @@ export default function Signup() {
     <img className = "bottom-desktop" src = {bottomDesktop} alt="" />
   </div>
   </>
-    
   )
 }

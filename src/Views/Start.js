@@ -22,4 +22,4 @@ export default function Start() {
       <img src={Collage} className={styles.home__collage} alt="Personas felices" />
     </div>
   )
-}
+};

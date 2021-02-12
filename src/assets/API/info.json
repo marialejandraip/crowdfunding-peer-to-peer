@@ -1,0 +1,13 @@
+{
+    "targets":[
+        {"input1": "Elige cuál es el motivo por el cual haces esta campaña"},
+        {"input2": "Escribe un nombre llamativo que creas ayude a impulsar tu campaña"},
+        {"input3": "Deja una breve y clara descripción que cuente un poco más sobre lo que deseas lograr con esta campaña"},
+        {"input4": "Ingresa el valor que esperas lograr recaudar"},
+        {"input5": "Elige la fecha en la que terminará tu campaña"},
+        {"input6": "Éste será el identificador de la página de tu campaña, máximo tres palabras sin tildes, separadas por guion medio"},
+        {"input7": "Impulsa tu campaña con un video que ayude a sensibilizar a los donantes, ingresa la url de tu video"},
+        {"input8": "Un posdcast también pude ayudar a sensibilizar a más donantes, ingresa la url de tu posdcast"},
+        {"input9": "Carga la imágen que usarás para tu campaña"}
+    ]
+}
