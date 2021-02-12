@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { auth } from './firebaseConfig';
 
 import Start from './Views/Start';
-import Signup from './components/signup';
-import Login from './components/login';
+import Signup from './Views/signup';
+import Login from './Views/login';
 import Waiting from './Views/Waiting';
 import Dashboard from './Views/Dashboard';
 
@@ -58,9 +58,15 @@ function App() {
         <Route path='/login'>
           <Login />
         </Route>
-        <Route path='/dashboard'>
+        <Route path='/dashboard/'>
           <Dashboard isUserLoggedIn={isUserLoggedIn} />
         </Route>
+{/*         <Route path='/dashboard/1'>
+          <Dashboard isUserLoggedIn={isUserLoggedIn} />
+        </Route>
+        <Route path='/dashboard/2'>
+          <Dashboard isUserLoggedIn={isUserLoggedIn} />
+        </Route> */}
       </Switch>
     </Router>
   );

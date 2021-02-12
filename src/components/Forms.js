@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+import Footer from '../components/Footer';
 
 
-export default function Forms() {
+export default function Forms({data,setData, setRuta, ruta}) {
   const initialStateValues = {
     type: '',
     campaignName: '' , 
@@ -11,7 +12,7 @@ export default function Forms() {
     recaudo: '',
     date: ''
   }
-const [data, setData] = useState (initialStateValues)
+//const [data, setData] = useState (initialStateValues)
 
 const handleInputchange = event => {
   //console.log(event.target.value)
@@ -24,7 +25,6 @@ const handleInputchange = event => {
 const handleSubmit = event => {
   event.preventDefault()
   console.log(data)
-  
    //recibe informacion de evento, cada que se hace click para enviar info del form    
 }
 
@@ -96,7 +96,7 @@ const handleSubmit = event => {
               </Button>
             </form>
           </Col>
-        </Row>      
+        </Row>     
     </Container>
   )
 }
