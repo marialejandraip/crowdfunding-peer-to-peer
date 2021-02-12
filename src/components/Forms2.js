@@ -26,17 +26,17 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
   }
   
     return (
-        <Container fluid 
-        rows sm = {20}
+        <Container fluid
         className = {styles.container}>
             <Row className = "rows">
+            <Col sm={1} md ={2}></Col>
               <Col className = "columns">
                 <form className="card card-body input-group" id = {styles.form} > 
                   <Form.Row>
                   <Form.Group as = {Col}>
                     <Form.Control 
                       className = {styles.input} 
-                      column sm={10}
+                      column sm={11} md={11}
                       type="text" 
                       name ="url"
                       placeholder ="Url de campaña" 
@@ -47,7 +47,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                     data-tip
                     data-for = "input6" 
                     as = {Col} 
-                    column sm={1} 
+                    column sm={1} md={1}
                     className = {styles.questionButton}> ?
                   </Button>
                   <ReactTooltip
@@ -65,7 +65,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                           type="text" 
                           placeholder="Url Video de campaña"
                           name="campaignVideo" 
-                          column sm={10}
+                          column sm={11} md={11}
                           onChange = {handleInputchange}>
                         </Form.Control>
                       </Form.Group> 
@@ -73,7 +73,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                         data-tip
                         data-for = "input7" 
                         as = {Col} 
-                        column sm={2} 
+                        column sm={1} md={1} 
                         className = {styles.questionButton}> ?
                       </Button>
                       <ReactTooltip
@@ -91,7 +91,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                         type="text" 
                         placeholder="Url Podcast de campaña"
                         name= "campaignPodcast" 
-                        column sm={10}
+                        column sm={11} md={11}
                         onChange = {handleInputchange}>
                       </Form.Control>
                     </Form.Group>
@@ -99,7 +99,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                       data-tip
                       data-for = "input8" 
                       as = {Col}
-                      column sm={2} 
+                      column sm={1} md={1}
                       className = {styles.questionButton}> ?
                     </Button>
                       <ReactTooltip
@@ -117,7 +117,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                         id = {styles.date}  
                         type="file"
                         name="image"
-                        column sm={10}
+                        column sm={11} md={11}
                         label="Impulsa con una foto de campaña"
                         onChange={handleImageSubmit}>
                       </Form.Control>
@@ -126,7 +126,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                       data-tip
                       data-for = "input9"
                       as = {Col}
-                      column sm={2} 
+                      column sm={2} md={1}
                       className = {styles.questionButton}> ?
                     </Button>
                     <ReactTooltip
@@ -137,7 +137,8 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                         "Sube la imágen que usarás para tu campaña"
                     </ReactTooltip> 
                   </Form.Row>
-                  <Form.Check                     
+                  <Form.Check  
+                    column sm={11} md={11}                   
                     id = {styles.switch}
                     type="switch"
                     label="Donantes Visibles"
@@ -146,6 +147,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit, campaingId
                     <ModalLink handleSubmit={handleSubmit} campaingId={campaingId}/>
                 </form>
               </Col>
+              <Col sm={1} md ={2}></Col>
             </Row>          
         </Container>
       )    
