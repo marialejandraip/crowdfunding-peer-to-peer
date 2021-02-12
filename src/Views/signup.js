@@ -21,11 +21,8 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
-
   const handleSubmit = async () => {
-    console.log('entra aqui')
     await createUserEmailAndPassword(em, password, name);
-    //setPending(true)
   }
   return (
     <>

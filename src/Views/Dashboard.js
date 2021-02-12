@@ -65,7 +65,7 @@ export default function Dashboard() {
     {userEmailVerified ?
       <div className={styles.container}>
       <button onClick={()=>{handleSignOut()}}>Logout</button>
-      <Header />
+      <Header user={user.displayName} img={user}/>
       <MediaQuery minDeviceWidth={720}>
         <Foundation
         setData={setData}
@@ -73,18 +73,21 @@ export default function Dashboard() {
         info={foundations}
         ruta={ruta}
         setRuta={setRuta}
+        setNow={setNow}
         />
         <Forms 
         data={data}
         setData={setData}
         ruta={ruta} 
         setRuta={setRuta}
+        setNow={setNow}
         />
         <Forms2 data={data}
         setData={setData}
         ruta={ruta}
         setRuta={setRuta}
-        handleSubmit ={handleSubmit}/>
+        handleSubmit ={handleSubmit}
+        setNow={setNow}/>
         
       </MediaQuery>
       <MediaQuery maxDeviceWidth={720}>

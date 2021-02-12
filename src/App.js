@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, useParams} from 'react-router-dom';
 import { auth } from './firebaseConfig';
 
 import Start from './Views/Start';
 import Signup from './Views/signup';
 import Login from './Views/login';
 import Dashboard from './Views/Dashboard';
+import Landing from './Views/Landing';
 
 import './App.css';
-//import Landing from './Views/Landing';
+
 
 function App() {
+
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   //const [pending, setPending] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -45,6 +47,9 @@ function App() {
         </Route>
         <Route path='/login' render={() => ( !isUserLoggedIn ? <Login /> : <Redirect to='/dashboard' /> )}/>
         <Route path="/dashboard" render={() => ( isUserLoggedIn ? <Dashboard /> : <Redirect to='/login' /> )}/>
+        <Route path="/blog/:slug">
+        <Landing />
+      </Route>
       </Switch>
     </Router>
   );
