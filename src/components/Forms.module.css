@@ -5,6 +5,7 @@
 #form{
     border:0;    
 }
+
 .questionButton{   
     background-color: #638ca865;
     width: 25px;
@@ -17,10 +18,7 @@
     align-items: center;
     justify-content: center;
     padding:auto;
-}
-
-.questionButton:hover{
-
+    margin-top: 30px;
 }
 
 #inputDate{
@@ -29,9 +27,7 @@
 .input{
     border: 1px solid #0ABFE5;
     border-radius: 18px;
-}
-#date{
-    
+    margin-top: 30px;
 }
 
 .switch{
