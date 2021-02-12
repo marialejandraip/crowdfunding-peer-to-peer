@@ -2,18 +2,11 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 export default function ModalFoundations({show, handleClose, name, info, setData, data}) {
-  const initialStateValues = {
-    foundation:'',
-    mision: '',
-    misiondesc:'',
-  }
 
   const handleInputchange = (event, idx) => {
-    //console.log(event.target.value)
-    const totalData = { ...data, foundation: name};
-    setData(totalData)
-      handleClose()
-    //funcion quee maneja info de los inputs actualizando el estado de estos
+    const totalData = { ...data, foundation: name, foundesc: info.description,};
+    setData(totalData);
+      handleClose();
   }
   
   console.log(data)
@@ -25,7 +18,7 @@ export default function ModalFoundations({show, handleClose, name, info, setData
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          
+          {info.description}
         </Modal.Body>
         <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>

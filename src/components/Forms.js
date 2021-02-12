@@ -1,32 +1,31 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
-import './Forms.css';
+import ReactTooltip from 'react-tooltip';
+import styles from './Forms.module.css';
 
 
-export default function Forms({data,setData, setRuta, ruta}) {
   
+export default function Forms({data,setData, setNow}) {
+setNow(100/3*2)
+
 const handleInputchange = event => {
   setData({
     ...data,
     [event.target.name] : event.target.value})
 }
 
-const handleSubmit = event => {
-  event.preventDefault()
-  console.log(data)  
-}
-
   return (
-    <Container fluid className = "container">
+    <Container fluid className = {styles.container}>
         <Row className = "rows">
           <Col className = "columns">
-            <form className="card card-body input-group" onSubmit = {handleSubmit} > 
+            <form className="card card-body input-group" id = {styles.form} >
               <Form.Row>
                 <Form.Group as = {Col}>
                   <Form.Control 
                     as="select"
                     column sm={10}
                     custom 
+                    className = {styles.input} 
                     type="text" 
                     name= "type"
                     defaultValue={'DEFAULT'} 
@@ -40,16 +39,26 @@ const handleSubmit = event => {
                   </Form.Control>
                 </Form.Group>
                 <Button 
+                  data-tip
+                  data-for = "input1"
                   as = {Col} 
                   column sm={2} 
-                  className = "questionButton"> ?
+                  className = {styles.questionButton}> ?
                 </Button>
+                <ReactTooltip
+                  id = "input1"
+                  place = "top"                  
+                  type = "info"
+                  effect = "solid">
+                    "Elige cuál es el motivo por el cual haces esta campaña"
+                </ReactTooltip>
               </Form.Row>
 
               <Form.Row> 
                 <Form.Group as = {Col}>
                   <Form.Control
-                    column sm={10} 
+                    column sm={10}
+                    className = {styles.input}  
                     type="text" 
                     placeholder="Nombre de campaña"
                     name= "campaignName" 
@@ -57,30 +66,46 @@ const handleSubmit = event => {
                   </Form.Control>
                 </Form.Group>
                 <Button 
+                  data-tip
+                  data-for = "input2"
                   as = {Col} 
                   column sm={2} 
-                  className = "questionButton"> ?
+                  className = {styles.questionButton}> ?
                 </Button> 
+                <ReactTooltip
+                  id = "input2"
+                  place = "top"                  
+                  type = "info"
+                  effect = "solid">
+                    "Escribe un nombre llamativo que creas ayude a impulsar tu campaña"
+                </ReactTooltip>
               </Form.Row>
-
-             
-
               <Form.Row>
                 <Form.Group as = {Col}>
                   <Form.Control 
                     column sm={10} 
                     as="textarea" 
                     rows = {4}
+                    className = {styles.input} 
                     name ="description"
                     placeholder ="Describe tu campaña" 
                     onChange = {handleInputchange}>
                   </Form.Control>
                 </Form.Group>
-                <Button 
+                <Button
+                  data-tip
+                  data-for = "input3" 
                   as = {Col} 
                   column sm={2} 
-                  className = "questionButton"> ?
+                  className = {styles.questionButton}> ?
                 </Button>
+                <ReactTooltip
+                  id = "input3"
+                  place = "top"                  
+                  type = "info"
+                  effect = "solid">
+                    "Deja una breve y clara descripción que cuente un poco más sobre lo que deseas lograr con esta campaña"
+                </ReactTooltip>
               </Form.Row>  
 
               <Form.Row>
@@ -88,19 +113,30 @@ const handleSubmit = event => {
                   <Form.Control 
                     column sm={5} 
                     type="number" 
+                    className = {styles.input} 
                     placeholder="Valor $"
                     name= "recaudo" 
                     onChange = {handleInputchange}>
                   </Form.Control>
                 </Form.Group> 
                 <Button 
+                  data-tip
+                  data-for = "input4"
                   as = {Col} 
                   column sm={1} 
-                  className = "questionButton"> ?
+                  className = {styles.questionButton}> ?
                 </Button>
+                <ReactTooltip
+                  id = "input4"
+                  place = "top"                  
+                  type = "info"
+                  effect = "solid">
+                    "Ingresa el valor que esperas lograr recaudar"
+                </ReactTooltip>
                 <Form.Group as = {Col}>
                   <Form.Control
-                    id = "inputDate" 
+                    className = {styles.input} 
+                    id = {styles.inputDate}
                     column sm={3} 
                     type="date" 
                     placeholder="Fecha límite"
@@ -108,11 +144,20 @@ const handleSubmit = event => {
                     onChange = {handleInputchange}>
                   </Form.Control>
                 </Form.Group >
-                <Button 
+                <Button
+                data-tip
+                data-for = "input5" 
                   as = {Col} 
                   column sm={1} 
-                  className = "questionButton"> ?
-                </Button>            
+                  className = {styles.questionButton}> ?
+                </Button> 
+                <ReactTooltip
+                  id = "input5"
+                  place = "top"                  
+                  type = "info"
+                  effect = "solid">
+                    "Elige la fecha en la que terminará tu campaña"
+                </ReactTooltip>           
               </Form.Row>
             </form>
           </Col>

@@ -3,19 +3,28 @@ import { auth } from './firebaseConfig';
 import { db } from './firebaseConfig';
 import 'firebase/firestore';
 
+
+
 export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
 
 //  ----- Creating user with email and password -----
-export async function createUserEmailAndPassword(email, password) {
+export async function createUserEmailAndPassword(email, password, name) {
 	try {
 		const authentication = await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log(authentication)
       authentication.user
        .sendEmailVerification()
        .then(() => {
-        console.log('email')
-       })
-       .catch((error) => {
+        var user = firebase.auth().currentUser;
+          user.updateProfile({
+          displayName: name,
+          photoURL: "https://example.com/jane-q-user/profile.jpg"
+        }).then(function() {
+  // Update successful.
+        }).catch(function(error) {
+  // An error happened.
+        })
+      }).catch((error) => {
         alert(error);// An error happened.
        });
     return authentication; //   objeto que trae mucas cosas
@@ -38,7 +47,7 @@ export async function newCampaign (orderObj) {
       date: orderObj.date,
       campaignVideo: orderObj.campaignVideo,
       campaignPodcast: orderObj.campaignPodcast,
-      campaignImage: orderObj.campaignImage,
+      image: orderObj.image,
       visibleDonors: orderObj.visibleDonors, 
     });
     console.log(order)
@@ -49,8 +58,8 @@ export async function newCampaign (orderObj) {
 	}
 };
 
-export const signOut = () => {
-  auth.signOut();
+export const signOut = async () => {
+  await auth.signOut();
   return localStorage.removeItem('token');
 };
 
@@ -72,10 +81,3 @@ export async function gettingData(collection) {
     return error.message;
   }
 }
-
-export const searchData = (data, inputSearch) => {
-  const lowerName = inputSearch.toLowerCase();
-  const capitalUpperName = lowerName.charAt(0).toUpperCase() + lowerName.slice(1);
-  const info = data.filter((proj) => proj.name.startsWith(capitalUpperName));
-  return info;
-};
