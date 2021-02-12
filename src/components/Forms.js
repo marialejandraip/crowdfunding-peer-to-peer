@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 import Footer from '../components/Footer';
+import styles from './Forms.css';
 
 
 export default function Forms({data,setData, setRuta, ruta}) {
@@ -35,6 +36,7 @@ const handleSubmit = event => {
             <form className="card card-body input-group" onSubmit = {handleSubmit} > 
               <Form.Group>
                 <Form.Control 
+                  className = {styles.inputForm}
                   as="select"
                   custom 
                   type="text" 
