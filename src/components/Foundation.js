@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './Foundation.module.css';
 import ModalFund from '../components/ModalFund';
-import Footer from '../components/Footer';
 
 export default function Foundation({ setData, data, info}) {
-  const foundation = Object.keys(info.foundations)
+  const foundation = Object.keys(info.foundations);
   return (
     <>
       <h3 className={styles.foundation__title}>Fundación Beneficiada</h3>

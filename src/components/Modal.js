@@ -10,9 +10,8 @@ export default function ModalFoundations({show, handleClose, name, info, setData
 
   const handleInputchange = (event, idx) => {
     //console.log(event.target.value)
-    setData({
-      ...data,
-      [event.target.name] : data.misions[idx]})
+    const totalData = { ...data, foundation: name};
+    setData(totalData)
       handleClose()
     //funcion quee maneja info de los inputs actualizando el estado de estos
   }
@@ -26,9 +25,8 @@ export default function ModalFoundations({show, handleClose, name, info, setData
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         
-      </Modal.Body>
-      <Modal.Footer>
+        </Modal.Body>
+        <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>
