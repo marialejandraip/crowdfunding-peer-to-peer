@@ -8,11 +8,10 @@ import Forms2 from '../components/Forms2';
 import Footer from '../components/Footer';
 import ProgressBar from '../components/ProgressBar';
 
-
 import styles from './Dashboard.module.css';
 import { useParams } from "react-router-dom";
 import { signOut } from '../firebaseFunctions';
-import {newCampaign} from '../firebaseFunctions';
+import { newCampaign } from '../firebaseFunctions';
 
 import foundations from '../assets/API/data';
 import Waiting from '../Views/Waiting';
@@ -22,8 +21,7 @@ import '../components.css';
 export default function Dashboard({ isUserLoggedIn }) {
   const initialStateValues = {
     foundation:'',
-    mision: '',
-    misiondesc:'',
+    foundesc:'',
     type: '',
     campaignName: '' , 
     description: '',   
@@ -32,7 +30,7 @@ export default function Dashboard({ isUserLoggedIn }) {
     date: '',
     campaignVideo: '',
     campaignPodcast: '',
-    campaignImage: null,
+    campaignImage: '',
     visibleDonors:'', 
   }
 
@@ -49,6 +47,7 @@ export default function Dashboard({ isUserLoggedIn }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     newCampaign(data);
+    console.log('loading firebase')
   }
 
   return (
@@ -74,8 +73,9 @@ export default function Dashboard({ isUserLoggedIn }) {
         <Forms2 data={data}
         setData={setData}
         ruta={ruta}
-        setRuta={setRuta}/>
-        <ProgressBar />
+        setRuta={setRuta}
+        handleSubmit ={handleSubmit}/>
+        
       </MediaQuery>
       <MediaQuery maxDeviceWidth={720}>
       {!ruta &&
@@ -99,8 +99,10 @@ export default function Dashboard({ isUserLoggedIn }) {
           <Forms2 data={data}
           setData={setData}
           ruta={ruta}
-          setRuta={setRuta}/>
+          setRuta={setRuta}
+          handleSubmit ={handleSubmit}/>
         }
+        <ProgressBar />
         <Footer ruta={ruta} setRuta={setRuta} id={id}/>
       </MediaQuery>
     </div>

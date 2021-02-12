@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Footer from '../components/Footer';
 import storage from '../firebaseConfig.js';
 
-export default function Forms_2({data, setData, setRuta, ruta}) {
+export default function Forms_2({data, setData, handleSubmit}) {
     const initialStateData = {
         campaignVideo: '',
         campaignPodcast: '',
@@ -29,18 +28,18 @@ export default function Forms_2({data, setData, setRuta, ruta}) {
       //funcion quee maneja info de los inputs actualizando el estado de estos
     }
     
-    const handleSubmit = event => {
+   /*  const handleSubmit = event => {
       event.preventDefault()
       console.log('Hola soy data =>',data)
       console.log('image =>',image)
       
        //recibe informacion de evento, cada que se hace click para enviar info del form    
-    }
+    } */
     return (
         <Container fluid>
             <Row className = "rows">
               <Col className = "columns">
-                <form className="card card-body input-group" onSubmit = {handleSubmit} > 
+                <form className="card card-body input-group" > 
                 <label htmlFor="basic-url">Video de campaña</label>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>

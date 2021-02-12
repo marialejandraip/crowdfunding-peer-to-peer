@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import { auth } from './firebaseConfig';
+import { db } from './firebaseConfig';
 import 'firebase/firestore';
 
 export const signIn = (email, password) => auth.signInWithEmailAndPassword(email, password);
@@ -28,8 +29,7 @@ export async function newCampaign (orderObj) {
   try {
 		const order = await db.collection('campaigns').add({
       foundation:orderObj.foundation,
-      mision: orderObj.mision,
-      misiondesc:orderObj.misiondesc,
+      foundesc:orderObj.foundesc,
       type: orderObj.type,
       campaignName: orderObj.campaignName , 
       description: orderObj.description,   
@@ -41,8 +41,10 @@ export async function newCampaign (orderObj) {
       campaignImage: orderObj.campaignImage,
       visibleDonors: orderObj.visibleDonors, 
     });
+    console.log(order)
 	return order;
 	} catch (error) {
+    console.log(error.message)
 		return error.message;
 	}
 };
@@ -51,7 +53,6 @@ export const signOut = () => {
   auth.signOut();
   return localStorage.removeItem('token');
 };
-
 
 const user = auth.currentUser;
 export const emailVerification = () => user
@@ -63,7 +64,6 @@ export const emailVerification = () => user
     console.log(error);
   });
 
-const db = firebase.firestore();
 export async function gettingData(collection) {
   try {
     const projectData = await db.collection(collection).get();
