@@ -39,7 +39,7 @@ function App() {
   if (loading) return <span>Loading...</span>;
 
   return (
-    <Router>
+<Router>
       <Switch>
         <Route exact path="/">
           <Start />

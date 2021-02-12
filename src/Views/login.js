@@ -1,7 +1,8 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import {signIn }from '../firebaseFunctions';
-import { Button, Row, Col, Container } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
+import {useHistory} from 'react-router-dom';
 
 import top from '../assets/images/mascaras/Group 34.svg';
 import topDesktop from '../assets/images/mascaras/group36.svg';
@@ -16,6 +17,7 @@ import '../components.css';
 
 
 export default function Login() {
+  let history= useHistory()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,21 +31,18 @@ export default function Login() {
       return console.log(err);
     }
   };
+  
+  const handleLogIn = (e) => {
+    history.push('/dashboard');
+    login(e);
+  }
 
   return (
     <div className = "login"> 
       <img className = "img-top" src = {top} alt=""/>
       <img className = "top-desktopL" src = {topDesktop} alt=""/>
       <img className = "grandma" src = {Grandma} alt=""/>
-      {/*<container>
-        <Row className = "rows">
-          <col-sm className = "columns">
-          </col>
-        </Row>
-        <Row className = "rows">
-          <col className = "columns"></col>
-        </Row>
-      </container>*/}
+
       <div>
         <h1 className = "tittle">Ingresar</h1>
         <div className = "container">
@@ -63,7 +62,7 @@ export default function Login() {
             </label>
             <Button 
             className = "col-7 button"
-            onClick={(e)=>login(e)} 
+            onClick={(e)=>handleLogIn(e)} 
             >Entrar</Button>
             <span>¿Olvidaste tu contraseña?</span>
           </div>
