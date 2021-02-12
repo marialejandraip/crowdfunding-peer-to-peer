@@ -7,7 +7,9 @@
 .nav{
   position: absolute;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   bottom: 30px;
   width: 100%;
 }
@@ -18,7 +20,6 @@
     -webkit-mask-image: url(../assets/images/Arrow.svg);
     mask-image: url(../assets/images/Arrow.svg);
   background-image: url(../assets/images/Arrow.svg);
-  bottom: 0;
   border:none;
   width: 39px;
   height: 30px;
@@ -28,7 +29,6 @@
 .arrowR{
   background-color: #ffffff00;
   background-image: url(../assets/images/ArrowRt.svg);
-  bottom: 0;
   border:none;
   width: 39px;
   height: 30px;

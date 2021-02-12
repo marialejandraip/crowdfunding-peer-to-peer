@@ -1,0 +1,149 @@
+.signup {
+  height: 100vh;
+  width: 100%;
+}
+
+.img-top {
+  position: absolute;
+  top: -10px;
+  height: 36%;
+  width: 100%;
+  z-index: -1;
+}
+
+.image-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 33%;
+  z-index: -1;
+}
+
+.arrowSign {
+  position: absolute;
+  bottom: 8vw;
+  left: 8vw;
+  width: 45px;
+  height: 45px;
+}
+
+.tittle-signup {
+  color: #00adf0;
+}
+
+/* .container-signup{
+  width: 100%;
+  padding: 12%;
+} */
+
+form {
+  width: 100%;
+  height: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.titleAndForm {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24% 12%;
+}
+
+label {
+  border-bottom: 1px #747474 solid;
+  color: #747474;
+  font-size: 1em;
+  margin: 10px;
+  width: 100%;
+}
+
+label img {
+  margin: 0 10px 0 0;
+}
+
+input {
+  border: none;
+  width: 100%;
+}
+
+.button {
+  background-color: #fc571f;
+  border: #fc571f;
+  border-radius: 18px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.arrow {
+  background-color: #00000000;
+  background-image: url(../assets/images/Arrow.svg);
+  width: 80%;
+  height: 72%;
+  z-index: 2;
+  border-style: none;
+}
+
+.child {
+  display: none;
+}
+
+label {
+  top: 10px;
+}
+
+.child,
+.top-desktop,
+.top-desktopL,
+.bottom-desktop,
+.bottom-desktopL,
+.grandma {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .img-top,
+  .image-bottom,
+  .arrow {
+    display: none;
+  }
+
+  .child {
+    display: block;
+    width: 100%;
+  }
+
+  .signup {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .bottom-desktop {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    z-index: -1;
+  }
+
+  .bottom-desktopL {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    z-index: -1;
+  }
+}

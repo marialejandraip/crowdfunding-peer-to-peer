@@ -14,6 +14,7 @@ import lock from '../assets/images/icons/lock.svg';
 import mail from '../assets/images/icons/mail.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components.css';
+import styles from './login.module.css';
 
 export default function Login() {
   let history= useHistory()
@@ -37,16 +38,16 @@ export default function Login() {
   }
 
   return (
-    <div className = "login"> 
-      <img className = "img-top" src = {top} alt=""/>
-      <img className = "top-desktopL" src = {topDesktop} alt=""/>
-      <img className = "grandma" src = {Grandma} alt=""/>
+    <div className = {styles.login}> 
+      <img className = {styles['img-top']} src = {top} alt=""/>
+      <img className = {styles['top-desktopL']} src = {topDesktop} alt=""/>
+      <img className = {styles.Grandma} src = {Grandma} alt=""/>
 
-      <div>
-        <h1 className = "tittle">Ingresar</h1>
-        <div className = "container">
+      <div className = {styles.titleAndForm}>
+        <h1 className = {styles.title}>Ingresar</h1>
+        <div className = {styles.container}>
           <form >
-          <div className="form-group">
+          <div className={styles['form-group']}>
           <label>
               <img src = {mail} alt=""/>
               Email:
@@ -63,13 +64,16 @@ export default function Login() {
             className = "col-7 button"
             onClick={(e)=>handleLogIn(e)} 
             >Entrar</Button>
-            <span>¿Olvidaste tu contraseña?</span>
           </div>
+          <p><span>¿Olvidaste tu contraseña?</span></p>
           </form>
         </div>
       </div>
-      <img className = "image-bottom" src = {bottom} alt=""/>
-      <Link to="/"><button className = "arrow"/></Link>
+      <img className = {styles['image-bottom']} src = {bottom} alt=""/>
+      <div className = {styles.arrowSign}>
+        <Link to="/"><button className = {styles.arrow} /></Link>
+      </div>
+      
 
       <img className = "bottom-desktopL" src = {bottomDesktop} alt=""/>
     </div>
