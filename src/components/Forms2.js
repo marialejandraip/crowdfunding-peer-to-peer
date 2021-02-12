@@ -1,9 +1,10 @@
 import React from 'react';
-import { Form, Button, Row, Col, Container, FormControl} from 'react-bootstrap';
+import { Form, Row, Col, Container, FormControl} from 'react-bootstrap';
+import ModalLink from './ModalLink';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {storage} from '../firebaseConfig.js';
 
-export default function Forms_2({data, setData, setNow, handleSubmit}) {
+export default function Forms_2({data, setData, setNow, handleSubmit, campaingId}) {
   setNow(100)
 
     const handleImageSubmit = event => {  
@@ -63,9 +64,7 @@ export default function Forms_2({data, setData, setNow, handleSubmit}) {
                     label="Tener visibles los donantes"
                     name="visibleDonors"
                     onChange={handleInputchange}/>
-
-                  <Button className="btn btn-bg-ligh text-dark" onClick = {handleSubmit}> Lanzar Campaña 
-                  </Button>
+                    <ModalLink handleSubmit={handleSubmit} campaingId={campaingId}/>
                 </form>
               </Col>
             </Row>          

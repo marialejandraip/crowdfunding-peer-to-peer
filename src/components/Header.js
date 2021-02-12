@@ -4,13 +4,14 @@ import dashboard from '../assets/images/mascaras/dashboard.svg';
 
 import styles from './Header.module.css';
 
-export default function Header() {
+export default function Header({user, img}) {
+  console.log(img)
   return (
     <>
       <img src={dashboard} className={styles.mask} alt=''/>
       <div className={styles.header}>
         <img src={User} alt=""/>
-        <h4>Pepita Pérez</h4>
+        <h4>{user}</h4>
       </div>
     </>
   )

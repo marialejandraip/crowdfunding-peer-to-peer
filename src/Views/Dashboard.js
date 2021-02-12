@@ -17,6 +17,8 @@ import { signOut } from '../firebaseFunctions';
 import { newCampaign } from '../firebaseFunctions';
 
 import '../components.css';
+import { render } from '@testing-library/react';
+import ModalLink from '../components/ModalLink';
 
 
 export default function Dashboard() {
@@ -32,7 +34,7 @@ export default function Dashboard() {
     date: '',
     campaignVideo: '',
     campaignPodcast: '',
-    campaignImage: '',
+    image: '',
     visibleDonors:'', 
   }
 
@@ -42,6 +44,7 @@ export default function Dashboard() {
   const [data, setData] = useState(initialStateValues);
   const [ruta, setRuta] = useState(id);
   const [now, setNow] =useState(0);
+  const [campaingId, setCampaingId] = useState('')
 
   const user = firebase.auth().currentUser;
   const userEmailVerified = user.emailVerified
@@ -52,9 +55,12 @@ export default function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    newCampaign(data);
-    console.log('loading firebase')
+    newCampaign(data).then((camp)=>{
+      let campaing = camp.id
+      setCampaingId(campaing)
+    })
   }
+
   const handleSignOut = () => {
     history.push('/login');
     signOut();
@@ -65,7 +71,7 @@ export default function Dashboard() {
     {userEmailVerified ?
       <div className={styles.container}>
       <button onClick={()=>{handleSignOut()}}>Logout</button>
-      <Header />
+      <Header user={user.displayName} img={user}/>
       <MediaQuery minDeviceWidth={720}>
         <Foundation
         setData={setData}
@@ -73,18 +79,21 @@ export default function Dashboard() {
         info={foundations}
         ruta={ruta}
         setRuta={setRuta}
+        setNow={setNow}
         />
         <Forms 
         data={data}
         setData={setData}
         ruta={ruta} 
         setRuta={setRuta}
+        setNow={setNow}
         />
         <Forms2 data={data}
         setData={setData}
         ruta={ruta}
         setRuta={setRuta}
-        handleSubmit ={handleSubmit}/>
+        handleSubmit ={handleSubmit}
+        setNow={setNow}/>
         
       </MediaQuery>
       <MediaQuery maxDeviceWidth={720}>
@@ -114,7 +123,8 @@ export default function Dashboard() {
           ruta={ruta}
           setRuta={setRuta}
           handleSubmit ={handleSubmit}
-          setNow={setNow}/>
+          setNow={setNow}
+          campaingId={campaingId}/>
         }
         <ProgressBar now={now}/>
         <Footer ruta={ruta} setRuta={setRuta} id={id}/>
