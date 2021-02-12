@@ -14,6 +14,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import styles from "./Landing.module.css";
 
 export default function Landing() {
+    
   const initialStateValues = {
     foundation:'',
     foundesc:'',
@@ -29,11 +30,13 @@ export default function Landing() {
     visibleDonors:'', 
   }
 
-
   let { campaingId } = useParams();
   const [campaingData, setCampaingData ] = useState(initialStateValues);
 
   useEffect(() => {
+    if (window.AfrusForms) {
+      window.AfrusForms.Inicializate()
+    }
     var docRef = db.collection("campaigns").doc(campaingId);
     docRef
       .get()
@@ -80,9 +83,8 @@ export default function Landing() {
       <div className={styles.elementor_afrus}>
         <div
           id="afrus-container-form"
-          data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw=="
+          data-form="Zm9ybS0xNTU0LW9yZ2FuaXphdGlvbi04Nw==" manual
         ></div>
-        <script src="https://my.afrus.app/template/index.js"></script>
       </div>
       <div className={styles.player_video}>
         <h1>Conoce más a fondo sobre la iniciativa</h1>
