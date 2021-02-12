@@ -14,6 +14,9 @@
 
 .arrow{
   background-color: #ffffff00;
+  background-color: black;
+    -webkit-mask-image: url(../assets/images/Arrow.svg);
+    mask-image: url(../assets/images/Arrow.svg);
   background-image: url(../assets/images/Arrow.svg);
   border: 0;
   width: 39px;
