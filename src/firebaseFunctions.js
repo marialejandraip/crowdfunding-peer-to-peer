@@ -47,10 +47,10 @@ export async function newCampaign (orderObj) {
       date: orderObj.date,
       campaignVideo: orderObj.campaignVideo,
       campaignPodcast: orderObj.campaignPodcast,
-      campaignImage: orderObj.campaignImage,
+      image: orderObj.image,
       visibleDonors: orderObj.visibleDonors, 
     });
-    console.log(order)
+    console.log(order.id)
 	return order;
 	} catch (error) {
     console.log(error.message)
@@ -81,3 +81,14 @@ export async function gettingData(collection) {
     return error.message;
   }
 }
+
+/* export function snapshotGettingData(collection, arrayData, setState, campaingId) {
+	db.collection(collection).doc(campaingId).onSnapshot((querySnapshot) => {
+		
+		querySnapshot.forEach((doc) => {
+			const data = doc.data()
+			arrayData.push({...data, idDoc: doc.id})
+		});
+		return setState(arrayData);
+	});
+}; */
