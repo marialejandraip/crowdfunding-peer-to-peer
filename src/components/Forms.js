@@ -17,13 +17,15 @@ const handleInputchange = event => {
   return (
     <Container fluid className = {styles.container}>
         <Row className = "rows">
-          <Col className = "columns">
-            <form className="card card-body input-group" id = {styles.form} >
+          <Col sm={1} md ={2}></Col>
+          <Col sm={10} md ={8} className = "columns">
+            <form className="card card-body input-group" id = {styles.form}
+             >
               <Form.Row>
                 <Form.Group as = {Col}>
                   <Form.Control 
                     as="select"
-                    column sm={10}
+                    column sm={11} md={11}
                     custom 
                     className = {styles.input} 
                     type="text" 
@@ -42,7 +44,7 @@ const handleInputchange = event => {
                   data-tip
                   data-for = "input1"
                   as = {Col} 
-                  column sm={2} 
+                  column sm={1} md={1} 
                   className = {styles.questionButton}> ?
                 </Button>
                 <ReactTooltip
@@ -57,7 +59,7 @@ const handleInputchange = event => {
               <Form.Row> 
                 <Form.Group as = {Col}>
                   <Form.Control
-                    column sm={10}
+                    column sm={11} md={11}
                     className = {styles.input}  
                     type="text" 
                     placeholder="Nombre de campaña"
@@ -69,7 +71,7 @@ const handleInputchange = event => {
                   data-tip
                   data-for = "input2"
                   as = {Col} 
-                  column sm={2} 
+                  column sm={1} md={1}
                   className = {styles.questionButton}> ?
                 </Button> 
                 <ReactTooltip
@@ -83,7 +85,7 @@ const handleInputchange = event => {
               <Form.Row>
                 <Form.Group as = {Col}>
                   <Form.Control 
-                    column sm={10} 
+                    column sm={11} md={11}
                     as="textarea" 
                     rows = {4}
                     className = {styles.input} 
@@ -96,7 +98,7 @@ const handleInputchange = event => {
                   data-tip
                   data-for = "input3" 
                   as = {Col} 
-                  column sm={2} 
+                  column sm={1} md={1}
                   className = {styles.questionButton}> ?
                 </Button>
                 <ReactTooltip
@@ -161,6 +163,7 @@ const handleInputchange = event => {
               </Form.Row>
             </form>
           </Col>
+          <Col sm={1} md ={2}></Col>
         </Row>     
     </Container>
   )
