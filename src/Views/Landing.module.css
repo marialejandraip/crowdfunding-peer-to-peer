@@ -1,0 +1,80 @@
+.image_port img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.container_info_camp {
+  position: absolute;
+  top: 25vh;
+  background: white;
+  width: 94%;
+  left: 3%;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0px 0px 30px 2px rgb(155, 220, 236);
+  
+}
+
+.container_desc_camp {
+  display: flex;
+}
+
+.container_ima_camp{
+    width: 30%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container_ima_camp img{
+    width:80px;
+    height:80px;
+    border-radius:40px;
+}
+
+.container_txt_camp{
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.container_txt_camp h4{
+    color: #FC571F;
+    font-size: 18px;
+    text-align: center;
+}
+
+.container_txt_camp p{
+    color: #3D3D3D;
+    text-align: justify;
+    font-size: 12px;
+}
+
+.container_progress_bar {
+    width: 90%;
+    margin: 15px;
+}
+
+.elementor_afrus{
+   position: absolute;
+   top: 60vh;
+   width: 100%;
+   background: #003045;
+}
+
+.player_video{
+    position: absolute;
+    top: 155vh;
+    width: 90%;
+    left:5%;
+    display: flex;
+    align-content: center;
+}
+
+.player_podcast{
+    position: absolute;
+    top: 215vh;
+    width: 90%;
+    left:5%;
+    display: flex;
+    align-content: center;
+}
