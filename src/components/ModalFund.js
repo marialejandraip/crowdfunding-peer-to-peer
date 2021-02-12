@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Modal from './Modal';
 import styles from './ModalFund.module.css';
 
-export default function ModalFund({name, idx, data, info, setData}) {
+export default function ModalFund({name, idx, data, info, setData, image}) {
 
   const [show, setShow] = useState(false);
 
@@ -21,7 +21,8 @@ export default function ModalFund({name, idx, data, info, setData}) {
       onClick={handleShow}
       name={name}
       className={styles.item}>
-        <p>{name}</p>
+        {/* <p>{name}</p> */}
+        <img src={process.env.PUBLIC_URL + `${image}`} alt={name}/>
       </div>
       
       <Modal 
