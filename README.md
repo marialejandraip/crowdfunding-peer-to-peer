@@ -24,13 +24,17 @@ Las personas tendrán perfiles donde podrán crear la iniciativa con algún even
 - Muchas veces no encontramos estos sitio personalizados de esta manera y queremos que sea lo suficientemente amigable a futuro para poder crear la red social de las iniciativas sociales y de servicio. 
 
 ## 4. Investigación de productos y diseño realizado
+Referencias de proyectos que con una iniciativa similar. 
+- [Colombia cuida a colombia - Alejandro Riaño](https://ayuda.abaco.org.co/alejandro-riano/)
+- [You can _ for clean water](https://www.charitywater.org/get-involved/fundraise)
+- [Cardio infantil Donaciones](https://www.cardioinfantil.org/donaciones/marketplace.html)
 
 ## 5. Prototipos e ideas figma
 - [Prototipo en Figma](https://www.figma.com/file/28NLXbdkmXi4yiROFqnVqT/Giving-Agency?node-id=0%3A1)
 - [Wireframe por Giving Agency](figma.com/file/ttDG1n1tHDUKK1qDdeptpd/LABORATORIA)
  
 ## 6. Dev tools & Stack
-HTML | CSS | React | Firebase |Boostrap
+HTML | CSS | React | Firebase | Bootstrap
 
 Made with 💙 | Febrero, 2021
 
