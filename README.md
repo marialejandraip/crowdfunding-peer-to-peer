@@ -26,10 +26,12 @@ Las personas tendrán perfiles donde podrán crear la iniciativa con algún even
 ## 4. Investigación de productos y diseño realizado
 
 ## 5. Prototipos e ideas figma
-[Prototipo en Figma](https://www.figma.com/file/28NLXbdkmXi4yiROFqnVqT/Giving-Agency?node-id=0%3A1)
-[Wireframe por Giving Agency](figma.com/file/ttDG1n1tHDUKK1qDdeptpd/LABORATORIA)
+- [Prototipo en Figma](https://www.figma.com/file/28NLXbdkmXi4yiROFqnVqT/Giving-Agency?node-id=0%3A1)
+- [Wireframe por Giving Agency](figma.com/file/ttDG1n1tHDUKK1qDdeptpd/LABORATORIA)
+ 
 ## 6. Dev tools & Stack
+HTML | CSS | React | Firebase |Boostrap
 
-
+Made with 💙 | Febrero, 2021
 
 
